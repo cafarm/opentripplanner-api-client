@@ -1,0 +1,649 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1F2F404415BCE06500121A2F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F404315BCE06500121A2F /* Foundation.framework */; };
+		1F2F405315BCE06600121A2F /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F405215BCE06600121A2F /* SenTestingKit.framework */; };
+		1F2F405515BCE06600121A2F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F405415BCE06600121A2F /* UIKit.framework */; };
+		1F2F405615BCE06600121A2F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F404315BCE06500121A2F /* Foundation.framework */; };
+		1F2F405915BCE06600121A2F /* libOTPClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F404015BCE06500121A2F /* libOTPClient.a */; };
+		1F2F405F15BCE06600121A2F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F2F405D15BCE06600121A2F /* InfoPlist.strings */; };
+		1F2F408715BCE2B400121A2F /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F407A15BCE19100121A2F /* libRestKit.a */; };
+		1F2F408915BCE2CE00121A2F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F408815BCE2CE00121A2F /* CFNetwork.framework */; };
+		1F2F408B15BCE2D400121A2F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F408A15BCE2D400121A2F /* CoreData.framework */; };
+		1F2F408D15BCE2DB00121A2F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F408C15BCE2DB00121A2F /* MobileCoreServices.framework */; };
+		1F2F408F15BCE2E500121A2F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F408E15BCE2E400121A2F /* Security.framework */; };
+		1F2F409115BCE2EF00121A2F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F409015BCE2EF00121A2F /* SystemConfiguration.framework */; };
+		1F2F409315BCE2F800121A2F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F409215BCE2F800121A2F /* QuartzCore.framework */; };
+		1F2F409515BCE30100121A2F /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F409415BCE30100121A2F /* libxml2.2.dylib */; };
+		1F2F409615BCE31800121A2F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F408815BCE2CE00121A2F /* CFNetwork.framework */; };
+		1F2F409715BCE32000121A2F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F408A15BCE2D400121A2F /* CoreData.framework */; };
+		1F2F409815BCE32700121A2F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F408C15BCE2DB00121A2F /* MobileCoreServices.framework */; };
+		1F2F409915BCE32F00121A2F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F408E15BCE2E400121A2F /* Security.framework */; };
+		1F2F409A15BCE33700121A2F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F409015BCE2EF00121A2F /* SystemConfiguration.framework */; };
+		1F2F409B15BCE34000121A2F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F409215BCE2F800121A2F /* QuartzCore.framework */; };
+		1F2F409C15BCE34700121A2F /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F409415BCE30100121A2F /* libxml2.2.dylib */; };
+		1F2F40A015BCE49700121A2F /* OTPTripPlan.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2F409F15BCE49700121A2F /* OTPTripPlan.m */; };
+		1F2F40A315BCE4AB00121A2F /* OTPItinerary.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2F40A215BCE4AB00121A2F /* OTPItinerary.m */; };
+		1F2F40A615BCE57500121A2F /* OTPMappingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2F40A515BCE57500121A2F /* OTPMappingProvider.m */; };
+		1F2F40AA15BCE7E200121A2F /* OTPTripPlanTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2F40A915BCE7E200121A2F /* OTPTripPlanTest.m */; };
+		1F2F40AD15BCE8CB00121A2F /* response.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F2F40AC15BCE8CB00121A2F /* response.json */; };
+		1F2F40AF15BCEA3700121A2F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F40AE15BCEA3700121A2F /* CoreGraphics.framework */; };
+		1F2F40B015BCEA4200121A2F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F40AE15BCEA3700121A2F /* CoreGraphics.framework */; };
+		1F2F40B615BCEB9B00121A2F /* OTPTestEnvironment.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2F40B515BCEB9B00121A2F /* OTPTestEnvironment.m */; };
+		1F2F40B915BCED9700121A2F /* OTPItineraryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2F40B815BCED9700121A2F /* OTPItineraryTest.m */; };
+		1F2F40BC15BCF1D300121A2F /* OTPResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2F40BB15BCF1D300121A2F /* OTPResponse.m */; };
+		1F2F40BF15BCF2A700121A2F /* OTPResponseTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2F40BE15BCF2A700121A2F /* OTPResponseTest.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1F2F405715BCE06600121A2F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1F2F403715BCE06500121A2F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1F2F403F15BCE06500121A2F;
+			remoteInfo = OTPClient;
+		};
+		1F2F407915BCE19100121A2F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1F2F406E15BCE19000121A2F /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160D1614564E810060A5C5;
+			remoteInfo = RestKit;
+		};
+		1F2F407B15BCE19100121A2F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1F2F406E15BCE19000121A2F /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160D2614564E820060A5C5;
+			remoteInfo = RestKitTests;
+		};
+		1F2F407D15BCE19100121A2F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1F2F406E15BCE19000121A2F /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160E62145651060060A5C5;
+			remoteInfo = RestKitFramework;
+		};
+		1F2F407F15BCE19100121A2F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1F2F406E15BCE19000121A2F /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160E78145651060060A5C5;
+			remoteInfo = RestKitFrameworkTests;
+		};
+		1F2F408115BCE19100121A2F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1F2F406E15BCE19000121A2F /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 259C301615128079003066A2;
+			remoteInfo = RestKitResources;
+		};
+		1F2F408515BCE29400121A2F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1F2F406E15BCE19000121A2F /* RestKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 25160D1514564E810060A5C5;
+			remoteInfo = RestKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1F2F403E15BCE06500121A2F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1F2F404015BCE06500121A2F /* libOTPClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOTPClient.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F2F404315BCE06500121A2F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1F2F404715BCE06500121A2F /* OTPClient-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OTPClient-Prefix.pch"; sourceTree = "<group>"; };
+		1F2F405115BCE06600121A2F /* OTPClientTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OTPClientTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F2F405215BCE06600121A2F /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		1F2F405415BCE06600121A2F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		1F2F405C15BCE06600121A2F /* OTPClientTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OTPClientTests-Info.plist"; sourceTree = "<group>"; };
+		1F2F405E15BCE06600121A2F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1F2F406E15BCE19000121A2F /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = Libraries/RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
+		1F2F408815BCE2CE00121A2F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		1F2F408A15BCE2D400121A2F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		1F2F408C15BCE2DB00121A2F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		1F2F408E15BCE2E400121A2F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		1F2F409015BCE2EF00121A2F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		1F2F409215BCE2F800121A2F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		1F2F409415BCE30100121A2F /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
+		1F2F409E15BCE49700121A2F /* OTPTripPlan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTPTripPlan.h; sourceTree = "<group>"; };
+		1F2F409F15BCE49700121A2F /* OTPTripPlan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTPTripPlan.m; sourceTree = "<group>"; };
+		1F2F40A115BCE4AB00121A2F /* OTPItinerary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTPItinerary.h; sourceTree = "<group>"; };
+		1F2F40A215BCE4AB00121A2F /* OTPItinerary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTPItinerary.m; sourceTree = "<group>"; };
+		1F2F40A415BCE57500121A2F /* OTPMappingProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTPMappingProvider.h; sourceTree = "<group>"; };
+		1F2F40A515BCE57500121A2F /* OTPMappingProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTPMappingProvider.m; sourceTree = "<group>"; };
+		1F2F40A915BCE7E200121A2F /* OTPTripPlanTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTPTripPlanTest.m; sourceTree = "<group>"; };
+		1F2F40AC15BCE8CB00121A2F /* response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = response.json; sourceTree = "<group>"; };
+		1F2F40AE15BCEA3700121A2F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1F2F40B415BCEB9B00121A2F /* OTPTestEnvironment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTPTestEnvironment.h; sourceTree = "<group>"; };
+		1F2F40B515BCEB9B00121A2F /* OTPTestEnvironment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTPTestEnvironment.m; sourceTree = "<group>"; };
+		1F2F40B815BCED9700121A2F /* OTPItineraryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTPItineraryTest.m; sourceTree = "<group>"; };
+		1F2F40BA15BCF1D300121A2F /* OTPResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTPResponse.h; sourceTree = "<group>"; };
+		1F2F40BB15BCF1D300121A2F /* OTPResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTPResponse.m; sourceTree = "<group>"; };
+		1F2F40BE15BCF2A700121A2F /* OTPResponseTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTPResponseTest.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1F2F403D15BCE06500121A2F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F2F40AF15BCEA3700121A2F /* CoreGraphics.framework in Frameworks */,
+				1F2F409515BCE30100121A2F /* libxml2.2.dylib in Frameworks */,
+				1F2F409315BCE2F800121A2F /* QuartzCore.framework in Frameworks */,
+				1F2F409115BCE2EF00121A2F /* SystemConfiguration.framework in Frameworks */,
+				1F2F408F15BCE2E500121A2F /* Security.framework in Frameworks */,
+				1F2F408D15BCE2DB00121A2F /* MobileCoreServices.framework in Frameworks */,
+				1F2F408B15BCE2D400121A2F /* CoreData.framework in Frameworks */,
+				1F2F408915BCE2CE00121A2F /* CFNetwork.framework in Frameworks */,
+				1F2F408715BCE2B400121A2F /* libRestKit.a in Frameworks */,
+				1F2F404415BCE06500121A2F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F2F404D15BCE06600121A2F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F2F40B015BCEA4200121A2F /* CoreGraphics.framework in Frameworks */,
+				1F2F409C15BCE34700121A2F /* libxml2.2.dylib in Frameworks */,
+				1F2F409B15BCE34000121A2F /* QuartzCore.framework in Frameworks */,
+				1F2F409A15BCE33700121A2F /* SystemConfiguration.framework in Frameworks */,
+				1F2F409915BCE32F00121A2F /* Security.framework in Frameworks */,
+				1F2F409815BCE32700121A2F /* MobileCoreServices.framework in Frameworks */,
+				1F2F409715BCE32000121A2F /* CoreData.framework in Frameworks */,
+				1F2F409615BCE31800121A2F /* CFNetwork.framework in Frameworks */,
+				1F2F405315BCE06600121A2F /* SenTestingKit.framework in Frameworks */,
+				1F2F405515BCE06600121A2F /* UIKit.framework in Frameworks */,
+				1F2F405615BCE06600121A2F /* Foundation.framework in Frameworks */,
+				1F2F405915BCE06600121A2F /* libOTPClient.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1F2F403515BCE06500121A2F = {
+			isa = PBXGroup;
+			children = (
+				1F2F404515BCE06500121A2F /* OTPClient */,
+				1F2F405A15BCE06600121A2F /* OTPClientTests */,
+				1F2F408415BCE19C00121A2F /* Libraries */,
+				1F2F404215BCE06500121A2F /* Frameworks */,
+				1F2F404115BCE06500121A2F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1F2F404115BCE06500121A2F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1F2F404015BCE06500121A2F /* libOTPClient.a */,
+				1F2F405115BCE06600121A2F /* OTPClientTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1F2F404215BCE06500121A2F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1F2F40AE15BCEA3700121A2F /* CoreGraphics.framework */,
+				1F2F409215BCE2F800121A2F /* QuartzCore.framework */,
+				1F2F409015BCE2EF00121A2F /* SystemConfiguration.framework */,
+				1F2F408E15BCE2E400121A2F /* Security.framework */,
+				1F2F408C15BCE2DB00121A2F /* MobileCoreServices.framework */,
+				1F2F408A15BCE2D400121A2F /* CoreData.framework */,
+				1F2F408815BCE2CE00121A2F /* CFNetwork.framework */,
+				1F2F404315BCE06500121A2F /* Foundation.framework */,
+				1F2F405215BCE06600121A2F /* SenTestingKit.framework */,
+				1F2F405415BCE06600121A2F /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1F2F404515BCE06500121A2F /* OTPClient */ = {
+			isa = PBXGroup;
+			children = (
+				1F2F40A415BCE57500121A2F /* OTPMappingProvider.h */,
+				1F2F40A515BCE57500121A2F /* OTPMappingProvider.m */,
+				1F2F409D15BCE44800121A2F /* Models */,
+				1F2F404615BCE06500121A2F /* Supporting Files */,
+			);
+			path = OTPClient;
+			sourceTree = "<group>";
+		};
+		1F2F404615BCE06500121A2F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1F2F404715BCE06500121A2F /* OTPClient-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1F2F405A15BCE06600121A2F /* OTPClientTests */ = {
+			isa = PBXGroup;
+			children = (
+				1F2F40AB15BCE8B800121A2F /* Fixtures */,
+				1F2F40A715BCE75100121A2F /* Models */,
+				1F2F405B15BCE06600121A2F /* Supporting Files */,
+				1F2F40B415BCEB9B00121A2F /* OTPTestEnvironment.h */,
+				1F2F40B515BCEB9B00121A2F /* OTPTestEnvironment.m */,
+			);
+			path = OTPClientTests;
+			sourceTree = "<group>";
+		};
+		1F2F405B15BCE06600121A2F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1F2F405C15BCE06600121A2F /* OTPClientTests-Info.plist */,
+				1F2F405D15BCE06600121A2F /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1F2F406F15BCE19000121A2F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1F2F407A15BCE19100121A2F /* libRestKit.a */,
+				1F2F407C15BCE19100121A2F /* RestKitTests.octest */,
+				1F2F407E15BCE19100121A2F /* RestKit.framework */,
+				1F2F408015BCE19100121A2F /* RestKitFrameworkTests.octest */,
+				1F2F408215BCE19100121A2F /* RestKitResources.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1F2F408415BCE19C00121A2F /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				1F2F409415BCE30100121A2F /* libxml2.2.dylib */,
+				1F2F406E15BCE19000121A2F /* RestKit.xcodeproj */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		1F2F409D15BCE44800121A2F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1F2F40BA15BCF1D300121A2F /* OTPResponse.h */,
+				1F2F40BB15BCF1D300121A2F /* OTPResponse.m */,
+				1F2F409E15BCE49700121A2F /* OTPTripPlan.h */,
+				1F2F409F15BCE49700121A2F /* OTPTripPlan.m */,
+				1F2F40A115BCE4AB00121A2F /* OTPItinerary.h */,
+				1F2F40A215BCE4AB00121A2F /* OTPItinerary.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		1F2F40A715BCE75100121A2F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1F2F40BE15BCF2A700121A2F /* OTPResponseTest.m */,
+				1F2F40A915BCE7E200121A2F /* OTPTripPlanTest.m */,
+				1F2F40B815BCED9700121A2F /* OTPItineraryTest.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		1F2F40AB15BCE8B800121A2F /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				1F2F40AC15BCE8CB00121A2F /* response.json */,
+			);
+			name = Fixtures;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1F2F403F15BCE06500121A2F /* OTPClient */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F2F406515BCE06600121A2F /* Build configuration list for PBXNativeTarget "OTPClient" */;
+			buildPhases = (
+				1F2F403C15BCE06500121A2F /* Sources */,
+				1F2F403D15BCE06500121A2F /* Frameworks */,
+				1F2F403E15BCE06500121A2F /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1F2F408615BCE29400121A2F /* PBXTargetDependency */,
+			);
+			name = OTPClient;
+			productName = OTPClient;
+			productReference = 1F2F404015BCE06500121A2F /* libOTPClient.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		1F2F405015BCE06600121A2F /* OTPClientTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F2F406815BCE06600121A2F /* Build configuration list for PBXNativeTarget "OTPClientTests" */;
+			buildPhases = (
+				1F2F404C15BCE06600121A2F /* Sources */,
+				1F2F404D15BCE06600121A2F /* Frameworks */,
+				1F2F404E15BCE06600121A2F /* Resources */,
+				1F2F404F15BCE06600121A2F /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1F2F405815BCE06600121A2F /* PBXTargetDependency */,
+			);
+			name = OTPClientTests;
+			productName = OTPClientTests;
+			productReference = 1F2F405115BCE06600121A2F /* OTPClientTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1F2F403715BCE06500121A2F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Seven O' Eight";
+			};
+			buildConfigurationList = 1F2F403A15BCE06500121A2F /* Build configuration list for PBXProject "OTPClient" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1F2F403515BCE06500121A2F;
+			productRefGroup = 1F2F404115BCE06500121A2F /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 1F2F406F15BCE19000121A2F /* Products */;
+					ProjectRef = 1F2F406E15BCE19000121A2F /* RestKit.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				1F2F403F15BCE06500121A2F /* OTPClient */,
+				1F2F405015BCE06600121A2F /* OTPClientTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		1F2F407A15BCE19100121A2F /* libRestKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKit.a;
+			remoteRef = 1F2F407915BCE19100121A2F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1F2F407C15BCE19100121A2F /* RestKitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RestKitTests.octest;
+			remoteRef = 1F2F407B15BCE19100121A2F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1F2F407E15BCE19100121A2F /* RestKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RestKit.framework;
+			remoteRef = 1F2F407D15BCE19100121A2F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1F2F408015BCE19100121A2F /* RestKitFrameworkTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RestKitFrameworkTests.octest;
+			remoteRef = 1F2F407F15BCE19100121A2F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1F2F408215BCE19100121A2F /* RestKitResources.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RestKitResources.bundle;
+			remoteRef = 1F2F408115BCE19100121A2F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1F2F404E15BCE06600121A2F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F2F405F15BCE06600121A2F /* InfoPlist.strings in Resources */,
+				1F2F40AD15BCE8CB00121A2F /* response.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1F2F404F15BCE06600121A2F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1F2F403C15BCE06500121A2F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F2F40A015BCE49700121A2F /* OTPTripPlan.m in Sources */,
+				1F2F40A315BCE4AB00121A2F /* OTPItinerary.m in Sources */,
+				1F2F40A615BCE57500121A2F /* OTPMappingProvider.m in Sources */,
+				1F2F40BC15BCF1D300121A2F /* OTPResponse.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F2F404C15BCE06600121A2F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F2F40AA15BCE7E200121A2F /* OTPTripPlanTest.m in Sources */,
+				1F2F40B615BCEB9B00121A2F /* OTPTestEnvironment.m in Sources */,
+				1F2F40B915BCED9700121A2F /* OTPItineraryTest.m in Sources */,
+				1F2F40BF15BCF2A700121A2F /* OTPResponseTest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1F2F405815BCE06600121A2F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1F2F403F15BCE06500121A2F /* OTPClient */;
+			targetProxy = 1F2F405715BCE06600121A2F /* PBXContainerItemProxy */;
+		};
+		1F2F408615BCE29400121A2F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RestKit;
+			targetProxy = 1F2F408515BCE29400121A2F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1F2F405D15BCE06600121A2F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1F2F405E15BCE06600121A2F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1F2F406315BCE06600121A2F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1F2F406415BCE06600121A2F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1F2F406615BCE06600121A2F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/OTPClient.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OTPClient/OTPClient-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/../../Headers\"";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		1F2F406715BCE06600121A2F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/OTPClient.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OTPClient/OTPClient-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/../../Headers\"";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		1F2F406915BCE06600121A2F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OTPClient/OTPClient-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/../../Headers\"";
+				INFOPLIST_FILE = "OTPClientTests/OTPClientTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		1F2F406A15BCE06600121A2F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OTPClient/OTPClient-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/../../Headers\"";
+				INFOPLIST_FILE = "OTPClientTests/OTPClientTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1F2F403A15BCE06500121A2F /* Build configuration list for PBXProject "OTPClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F2F406315BCE06600121A2F /* Debug */,
+				1F2F406415BCE06600121A2F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1F2F406515BCE06600121A2F /* Build configuration list for PBXNativeTarget "OTPClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F2F406615BCE06600121A2F /* Debug */,
+				1F2F406715BCE06600121A2F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1F2F406815BCE06600121A2F /* Build configuration list for PBXNativeTarget "OTPClientTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F2F406915BCE06600121A2F /* Debug */,
+				1F2F406A15BCE06600121A2F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1F2F403715BCE06500121A2F /* Project object */;
+}
