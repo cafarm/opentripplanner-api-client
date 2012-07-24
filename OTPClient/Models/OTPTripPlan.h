@@ -8,10 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+@class OTPPlace;
+
 @interface OTPTripPlan : NSObject
 
 @property (strong, nonatomic) NSNumber *dateAsTimeInterval;
 @property (strong, nonatomic) NSDate *date;
+@property (strong, nonatomic) OTPPlace *from;
+@property (strong, nonatomic) OTPPlace *to;
 @property (strong, nonatomic) NSArray *itineraries;
 
 @end

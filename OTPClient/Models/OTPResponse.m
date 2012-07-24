@@ -10,6 +10,8 @@
 
 @implementation OTPResponse
 
+@synthesize requestParameters;
 @synthesize tripPlan;
+@synthesize plannerError;
 
 @end

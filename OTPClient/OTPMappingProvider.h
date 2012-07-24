@@ -12,7 +12,15 @@
 
 - (RKObjectMapping *)responseObjectMapping;
 
+- (RKObjectMapping *)requestParametersObjectMapping;
+
 - (RKObjectMapping *)tripPlanObjectMapping;
+
+- (RKObjectMapping *)placeObjectMapping;
+
+- (RKObjectMapping *)agencyAndIDObjectMapping;
+
+- (RKObjectMapping *)plannerErrorObjectMapping;
 
 - (RKObjectMapping *)itineraryObjectMapping;
 

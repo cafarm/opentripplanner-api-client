@@ -8,10 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-#import "OTPTripPlan.h"
+@class OTPRequestParameters;
+@class OTPTripPlan;
+@class OTPPlannerError;
 
 @interface OTPResponse : NSObject
 
+@property (strong, nonatomic) OTPRequestParameters *requestParameters;
 @property (strong, nonatomic) OTPTripPlan *tripPlan;
+@property (strong, nonatomic) OTPPlannerError *plannerError;
 
 @end

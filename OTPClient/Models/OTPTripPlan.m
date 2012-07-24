@@ -7,21 +7,24 @@
 //
 
 #import "OTPTripPlan.h"
+#import "NSDate+OTPTimeInterval.h"
 
 @implementation OTPTripPlan
 
 @synthesize date;
+@synthesize from;
+@synthesize to;
 @synthesize itineraries;
 
 // OTP json dates are in unix epoch milliseconds not the standard seconds
 - (void)setDateAsTimeInterval:(NSNumber *)dateAsTimeInterval
 {
-    self.date = [NSDate dateWithTimeIntervalSince1970:([dateAsTimeInterval longLongValue] / 1000)];
+    self.date = [NSDate dateWithOTPTimeInterval:[dateAsTimeInterval doubleValue]];
 }
 
 - (NSNumber *)dateAsTimeInterval
 {
-    return [NSNumber numberWithLongLong:([self.date timeIntervalSince1970] * 1000)];
+    return [NSNumber numberWithDouble:[self.date otpTimeInterval]];
 }
 
 @end
