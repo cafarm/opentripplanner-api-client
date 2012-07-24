@@ -13,6 +13,14 @@
 		1F01289115BE55430063ECDC /* OTPPlaceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F01289015BE55430063ECDC /* OTPPlaceTest.m */; };
 		1F01289415BE5A820063ECDC /* OTPAgencyAndIDTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F01289315BE5A820063ECDC /* OTPAgencyAndIDTest.m */; };
 		1F01289715BE5C030063ECDC /* OTPPlannerErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F01289615BE5C030063ECDC /* OTPPlannerErrorTest.m */; };
+		1F01289A15BE62B10063ECDC /* OTPFare.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F01289915BE62B10063ECDC /* OTPFare.m */; };
+		1F01289D15BE62EF0063ECDC /* OTPLeg.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F01289C15BE62EF0063ECDC /* OTPLeg.m */; };
+		1F0128A015BE68D60063ECDC /* OTPEncodedPolyline.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F01289F15BE68D60063ECDC /* OTPEncodedPolyline.m */; };
+		1F0128A315BE78580063ECDC /* OTPWalkStep.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0128A215BE78580063ECDC /* OTPWalkStep.m */; };
+		1F0128A615BE80E70063ECDC /* OTPFareTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0128A515BE80E70063ECDC /* OTPFareTest.m */; };
+		1F0128A915BE81210063ECDC /* OTPLegTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0128A815BE81210063ECDC /* OTPLegTest.m */; };
+		1F0128AC15BE88840063ECDC /* OTPEncodedPolylineTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0128AB15BE88840063ECDC /* OTPEncodedPolylineTest.m */; };
+		1F0128AF15BE89DF0063ECDC /* OTPWalkStepTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0128AE15BE89DF0063ECDC /* OTPWalkStepTest.m */; };
 		1F2F404415BCE06500121A2F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F404315BCE06500121A2F /* Foundation.framework */; };
 		1F2F405315BCE06600121A2F /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F405215BCE06600121A2F /* SenTestingKit.framework */; };
 		1F2F405515BCE06600121A2F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F405415BCE06600121A2F /* UIKit.framework */; };
@@ -125,6 +133,18 @@
 		1F01289015BE55430063ECDC /* OTPPlaceTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OTPPlaceTest.m; path = Models/OTPPlaceTest.m; sourceTree = "<group>"; };
 		1F01289315BE5A820063ECDC /* OTPAgencyAndIDTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OTPAgencyAndIDTest.m; path = Models/OTPAgencyAndIDTest.m; sourceTree = "<group>"; };
 		1F01289615BE5C030063ECDC /* OTPPlannerErrorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OTPPlannerErrorTest.m; path = Models/OTPPlannerErrorTest.m; sourceTree = "<group>"; };
+		1F01289815BE62B10063ECDC /* OTPFare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OTPFare.h; path = Models/OTPFare.h; sourceTree = "<group>"; };
+		1F01289915BE62B10063ECDC /* OTPFare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OTPFare.m; path = Models/OTPFare.m; sourceTree = "<group>"; };
+		1F01289B15BE62EE0063ECDC /* OTPLeg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OTPLeg.h; path = Models/OTPLeg.h; sourceTree = "<group>"; };
+		1F01289C15BE62EF0063ECDC /* OTPLeg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OTPLeg.m; path = Models/OTPLeg.m; sourceTree = "<group>"; };
+		1F01289E15BE68D50063ECDC /* OTPEncodedPolyline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OTPEncodedPolyline.h; path = Models/OTPEncodedPolyline.h; sourceTree = "<group>"; };
+		1F01289F15BE68D60063ECDC /* OTPEncodedPolyline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OTPEncodedPolyline.m; path = Models/OTPEncodedPolyline.m; sourceTree = "<group>"; };
+		1F0128A115BE78570063ECDC /* OTPWalkStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OTPWalkStep.h; path = Models/OTPWalkStep.h; sourceTree = "<group>"; };
+		1F0128A215BE78580063ECDC /* OTPWalkStep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OTPWalkStep.m; path = Models/OTPWalkStep.m; sourceTree = "<group>"; };
+		1F0128A515BE80E70063ECDC /* OTPFareTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OTPFareTest.m; path = Models/OTPFareTest.m; sourceTree = "<group>"; };
+		1F0128A815BE81210063ECDC /* OTPLegTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OTPLegTest.m; path = Models/OTPLegTest.m; sourceTree = "<group>"; };
+		1F0128AB15BE88840063ECDC /* OTPEncodedPolylineTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OTPEncodedPolylineTest.m; path = Models/OTPEncodedPolylineTest.m; sourceTree = "<group>"; };
+		1F0128AE15BE89DF0063ECDC /* OTPWalkStepTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OTPWalkStepTest.m; path = Models/OTPWalkStepTest.m; sourceTree = "<group>"; };
 		1F2F404015BCE06500121A2F /* libOTPClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOTPClient.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F2F404315BCE06500121A2F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1F2F404715BCE06500121A2F /* OTPClient-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OTPClient-Prefix.pch"; sourceTree = "<group>"; };
@@ -321,6 +341,14 @@
 				1F2F40C115BE0E9100121A2F /* OTPPlannerError.m */,
 				1F2F40A115BCE4AB00121A2F /* OTPItinerary.h */,
 				1F2F40A215BCE4AB00121A2F /* OTPItinerary.m */,
+				1F01289815BE62B10063ECDC /* OTPFare.h */,
+				1F01289915BE62B10063ECDC /* OTPFare.m */,
+				1F01289B15BE62EE0063ECDC /* OTPLeg.h */,
+				1F01289C15BE62EF0063ECDC /* OTPLeg.m */,
+				1F01289E15BE68D50063ECDC /* OTPEncodedPolyline.h */,
+				1F01289F15BE68D60063ECDC /* OTPEncodedPolyline.m */,
+				1F0128A115BE78570063ECDC /* OTPWalkStep.h */,
+				1F0128A215BE78580063ECDC /* OTPWalkStep.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -335,6 +363,10 @@
 				1F01289315BE5A820063ECDC /* OTPAgencyAndIDTest.m */,
 				1F01289615BE5C030063ECDC /* OTPPlannerErrorTest.m */,
 				1F2F40B815BCED9700121A2F /* OTPItineraryTest.m */,
+				1F0128A515BE80E70063ECDC /* OTPFareTest.m */,
+				1F0128A815BE81210063ECDC /* OTPLegTest.m */,
+				1F0128AB15BE88840063ECDC /* OTPEncodedPolylineTest.m */,
+				1F0128AE15BE89DF0063ECDC /* OTPWalkStepTest.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -502,6 +534,10 @@
 				1F01288815BE391F0063ECDC /* OTPPlace.m in Sources */,
 				1F01288B15BE3AE20063ECDC /* OTPAgencyAndID.m in Sources */,
 				1F01288E15BE3F8B0063ECDC /* NSDate+OTPTimeInterval.m in Sources */,
+				1F01289A15BE62B10063ECDC /* OTPFare.m in Sources */,
+				1F01289D15BE62EF0063ECDC /* OTPLeg.m in Sources */,
+				1F0128A015BE68D60063ECDC /* OTPEncodedPolyline.m in Sources */,
+				1F0128A315BE78580063ECDC /* OTPWalkStep.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,6 +553,10 @@
 				1F01289115BE55430063ECDC /* OTPPlaceTest.m in Sources */,
 				1F01289415BE5A820063ECDC /* OTPAgencyAndIDTest.m in Sources */,
 				1F01289715BE5C030063ECDC /* OTPPlannerErrorTest.m in Sources */,
+				1F0128A615BE80E70063ECDC /* OTPFareTest.m in Sources */,
+				1F0128A915BE81210063ECDC /* OTPLegTest.m in Sources */,
+				1F0128AC15BE88840063ECDC /* OTPEncodedPolylineTest.m in Sources */,
+				1F0128AF15BE89DF0063ECDC /* OTPWalkStepTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

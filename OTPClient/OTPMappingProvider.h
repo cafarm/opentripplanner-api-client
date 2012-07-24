@@ -24,4 +24,12 @@
 
 - (RKObjectMapping *)itineraryObjectMapping;
 
+- (RKObjectMapping *)fareObjectMapping;
+
+- (RKObjectMapping *)legObjectMapping;
+
+- (RKObjectMapping *)encodedPolylineObjectMapping;
+
+- (RKObjectMapping *)walkStepObjectMapping;
+
 @end

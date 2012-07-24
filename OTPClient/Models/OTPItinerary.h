@@ -8,8 +8,21 @@
 
 #import <Foundation/Foundation.h>
 
+@class OTPFare;
+
 @interface OTPItinerary : NSObject
 
-@property (strong, nonatomic) NSDate *duration;
+@property (strong, nonatomic) NSNumber *duration;
+@property (strong, nonatomic) NSNumber *startTimeAsTimeInterval;
+@property (strong, nonatomic) NSDate *startTime;
+@property (strong, nonatomic) NSNumber *endTimeAsTimeInterval;
+@property (strong, nonatomic) NSDate *endTime;
+@property (strong, nonatomic) NSNumber *walkTime;
+@property (strong, nonatomic) NSNumber *transitTime;
+@property (strong, nonatomic) NSNumber *waitingTime;
+@property (strong, nonatomic) NSNumber *walkDistance;
+@property (strong, nonatomic) NSNumber *transfers;
+@property (strong, nonatomic) OTPFare *fare;
+@property (strong, nonatomic) NSArray *legs;
 
 @end

@@ -11,6 +11,8 @@
 #import <RestKit/Testing.h>
 
 #import "OTPMappingProvider.h"
+#import "OTPItinerary.h"
+#import "OTPFare.h"
 
 @interface OTPItineraryTest : SenTestCase
 @end
@@ -27,22 +29,95 @@
     [RKTestFactory tearDown];
 }
 
-//- (RKMappingTest *)mappingTest
-//{
-//    id fixtureData = [RKTestFixture parsedObjectWithContentsOfFixture:@"plan.json"];
-//    NSDictionary *itineraryData = [[fixtureData valueForKey:@"plan"] valueForKey:@"itineraries"];
-//    
-//    OTPMappingProvider *mappingProvider = [[OTPMappingProvider alloc] init];
-//    RKObjectMapping *mapping = [mappingProvider itineraryObjectMapping];
-//    
-//    return [RKMappingTest testForMapping:mapping object:itineraryData];
-//}
-//
-//- (void)testMappingOfDuration
+- (id)data
+{
+    id fixtureData = [RKTestFixture parsedObjectWithContentsOfFixture:@"response.json"];
+    return [[[fixtureData valueForKey:@"plan"] valueForKey:@"itineraries"] firstObject];
+}
+
+- (RKObjectMapping *)mapping
+{
+    OTPMappingProvider *mappingProvider = [[OTPMappingProvider alloc] init];
+    return [mappingProvider itineraryObjectMapping];
+}
+
+- (RKMappingTest *)mappingTest
+{
+    return [RKMappingTest testForMapping:[self mapping] object:[self data]];
+}
+
+- (void)testMappingOfDuration
+{
+    RKMappingTest *mappingTest = [self mappingTest];
+    [mappingTest expectMappingFromKeyPath:@"duration" toKeyPath:@"duration" withValue:[NSNumber numberWithDouble:5279000]];
+    STAssertNoThrow([mappingTest verify], nil);
+}
+
+- (void)testMappingOfStartTime
+{
+    OTPItinerary *itinerary = [[OTPItinerary alloc] init];
+    RKMappingTest *mappingTest = [RKMappingTest testForMapping:[self mapping] sourceObject:[self data] destinationObject:itinerary];
+    [mappingTest performMapping];
+    STAssertTrue([itinerary.startTime isEqualToDate:[NSDate dateWithTimeIntervalSince1970:1343088604]], nil);
+}
+
+- (void)testMappingOfEndTime
+{
+    OTPItinerary *itinerary = [[OTPItinerary alloc] init];
+    RKMappingTest *mappingTest = [RKMappingTest testForMapping:[self mapping] sourceObject:[self data] destinationObject:itinerary];
+    [mappingTest performMapping];
+    STAssertTrue([itinerary.endTime isEqualToDate:[NSDate dateWithTimeIntervalSince1970:1343093883]], nil);
+}
+
+- (void)testMappingOfWalkTime
+{
+    RKMappingTest *mappingTest = [self mappingTest];
+    [mappingTest expectMappingFromKeyPath:@"walkTime" toKeyPath:@"walkTime" withValue:[NSNumber numberWithDouble:741]];
+    STAssertNoThrow([mappingTest verify], nil);
+}
+
+- (void)testMappingOfTransitTime
+{
+    RKMappingTest *mappingTest = [self mappingTest];
+    [mappingTest expectMappingFromKeyPath:@"transitTime" toKeyPath:@"transitTime" withValue:[NSNumber numberWithDouble:3975]];
+    STAssertNoThrow([mappingTest verify], nil);
+}
+
+- (void)testMappingOfWaitingTime
+{
+    RKMappingTest *mappingTest = [self mappingTest];
+    [mappingTest expectMappingFromKeyPath:@"waitingTime" toKeyPath:@"waitingTime" withValue:[NSNumber numberWithDouble:563]];
+    STAssertNoThrow([mappingTest verify], nil);
+}
+
+- (void)testMappingOfWalkDistance
+{
+    RKMappingTest *mappingTest = [self mappingTest];
+    [mappingTest expectMappingFromKeyPath:@"walkDistance" toKeyPath:@"walkDistance" withValue:[NSNumber numberWithDouble:975.14642243767]];
+    STAssertNoThrow([mappingTest verify], nil);
+}
+
+- (void)testMappingOfTransfers
+{
+    RKMappingTest *mappingTest = [self mappingTest];
+    [mappingTest expectMappingFromKeyPath:@"transfers" toKeyPath:@"transfers" withValue:[NSNumber numberWithInt:0]];
+    STAssertNoThrow([mappingTest verify], nil);
+}
+
+//- (void)testMappingOfFare
 //{
 //    RKMappingTest *mappingTest = [self mappingTest];
-//    [mappingTest expectMappingFromKeyPath:@"duration" toKeyPath:@"duration"];
+//    [mappingTest expectMappingFromKeyPath:@"fare" toKeyPath:@"fare" withValue:nil];
 //    STAssertNoThrow([mappingTest verify], nil);
 //}
+
+- (void)testMappingOfLegs
+{
+    RKMappingTest *mappingTest = [self mappingTest];
+    [mappingTest expectMappingFromKeyPath:@"legs" toKeyPath:@"legs" passingTest:^BOOL(RKObjectAttributeMapping *mapping, id value) {
+        return [value isKindOfClass:[NSArray class]] && [value count] == 6;
+    }];
+    STAssertNoThrow([mappingTest verify], nil);
+}
 
 @end

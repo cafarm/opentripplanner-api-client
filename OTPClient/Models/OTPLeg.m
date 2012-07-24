@@ -1,26 +1,31 @@
 //
-//  OTPItinerary.m
+//  OTPLeg.m
 //  OTPClient
 //
-//  Created by Mark Cafaro on 7/22/12.
+//  Created by Mark Cafaro on 7/23/12.
 //  Copyright (c) 2012 Seven O' Eight. All rights reserved.
 //
 
-#import "OTPItinerary.h"
+#import "OTPLeg.h"
 #import "NSDate+OTPTimeInterval.h"
 
-@implementation OTPItinerary
+@implementation OTPLeg
 
-@synthesize duration;
+@synthesize mode;
+@synthesize route;
+@synthesize interlineWithPreviousLeg;
+@synthesize tripShortName;
+@synthesize headsign;
+@synthesize tripID;
+
 @synthesize startTime;
 @synthesize endTime;
-@synthesize walkTime;
-@synthesize transitTime;
-@synthesize waitingTime;
-@synthesize walkDistance;
-@synthesize transfers;
-@synthesize fare;
-@synthesize legs;
+@synthesize distance;
+@synthesize from;
+@synthesize to;
+@synthesize legGeometry;
+@synthesize walkSteps;
+@synthesize duration;
 
 - (void)setStartTimeAsTimeInterval:(NSNumber *)startTimeAsTimeInterval
 {
