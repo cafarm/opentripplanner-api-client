@@ -25,7 +25,7 @@
 {
     self = [super init];
     if (self) {
-        [self setObjectMapping:[self responseObjectMapping] forResourcePathPattern:@"/plan"];
+        [self setObjectMapping:[self responseObjectMapping] forResourcePathPattern:@"/ws/plan"];
     }
     
     return self;

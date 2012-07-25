@@ -21,6 +21,7 @@
 		1F0128A915BE81210063ECDC /* OTPLegTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0128A815BE81210063ECDC /* OTPLegTest.m */; };
 		1F0128AC15BE88840063ECDC /* OTPEncodedPolylineTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0128AB15BE88840063ECDC /* OTPEncodedPolylineTest.m */; };
 		1F0128AF15BE89DF0063ECDC /* OTPWalkStepTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0128AE15BE89DF0063ECDC /* OTPWalkStepTest.m */; };
+		1F0128BF15BF74410063ECDC /* OTPMappingProviderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0128BE15BF74410063ECDC /* OTPMappingProviderTest.m */; };
 		1F2F404415BCE06500121A2F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F404315BCE06500121A2F /* Foundation.framework */; };
 		1F2F405315BCE06600121A2F /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F405215BCE06600121A2F /* SenTestingKit.framework */; };
 		1F2F405515BCE06600121A2F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F405415BCE06600121A2F /* UIKit.framework */; };
@@ -57,6 +58,8 @@
 		1F2F40C515BE136F00121A2F /* OTPRequestParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2F40C415BE136F00121A2F /* OTPRequestParameters.m */; };
 		1F2F40C815BE1EF700121A2F /* OTPRequestParametersTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2F40C715BE1EF700121A2F /* OTPRequestParametersTest.m */; };
 		1F2F40CA15BE213900121A2F /* responseWithError.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F2F40C915BE213900121A2F /* responseWithError.json */; };
+		1FF7F34815BFA58900694F29 /* OTPObjectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF7F34715BFA58900694F29 /* OTPObjectManager.m */; };
+		1FF7F34B15BFD93E00694F29 /* OTPObjectManagerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF7F34A15BFD93E00694F29 /* OTPObjectManagerTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,6 +148,7 @@
 		1F0128A815BE81210063ECDC /* OTPLegTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OTPLegTest.m; path = Models/OTPLegTest.m; sourceTree = "<group>"; };
 		1F0128AB15BE88840063ECDC /* OTPEncodedPolylineTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OTPEncodedPolylineTest.m; path = Models/OTPEncodedPolylineTest.m; sourceTree = "<group>"; };
 		1F0128AE15BE89DF0063ECDC /* OTPWalkStepTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OTPWalkStepTest.m; path = Models/OTPWalkStepTest.m; sourceTree = "<group>"; };
+		1F0128BE15BF74410063ECDC /* OTPMappingProviderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTPMappingProviderTest.m; sourceTree = "<group>"; };
 		1F2F404015BCE06500121A2F /* libOTPClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOTPClient.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F2F404315BCE06500121A2F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1F2F404715BCE06500121A2F /* OTPClient-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OTPClient-Prefix.pch"; sourceTree = "<group>"; };
@@ -182,6 +186,9 @@
 		1F2F40C415BE136F00121A2F /* OTPRequestParameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OTPRequestParameters.m; path = Models/OTPRequestParameters.m; sourceTree = "<group>"; };
 		1F2F40C715BE1EF700121A2F /* OTPRequestParametersTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OTPRequestParametersTest.m; path = Models/OTPRequestParametersTest.m; sourceTree = "<group>"; };
 		1F2F40C915BE213900121A2F /* responseWithError.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = responseWithError.json; path = Fixtures/responseWithError.json; sourceTree = "<group>"; };
+		1FF7F34615BFA58900694F29 /* OTPObjectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTPObjectManager.h; sourceTree = "<group>"; };
+		1FF7F34715BFA58900694F29 /* OTPObjectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTPObjectManager.m; sourceTree = "<group>"; };
+		1FF7F34A15BFD93E00694F29 /* OTPObjectManagerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTPObjectManagerTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,6 +271,8 @@
 		1F2F404515BCE06500121A2F /* OTPClient */ = {
 			isa = PBXGroup;
 			children = (
+				1FF7F34615BFA58900694F29 /* OTPObjectManager.h */,
+				1FF7F34715BFA58900694F29 /* OTPObjectManager.m */,
 				1F2F40A415BCE57500121A2F /* OTPMappingProvider.h */,
 				1F2F40A515BCE57500121A2F /* OTPMappingProvider.m */,
 				1F2F409D15BCE44800121A2F /* Models */,
@@ -290,6 +299,8 @@
 				1F2F405B15BCE06600121A2F /* Supporting Files */,
 				1F2F40B415BCEB9B00121A2F /* OTPTestEnvironment.h */,
 				1F2F40B515BCEB9B00121A2F /* OTPTestEnvironment.m */,
+				1F0128BE15BF74410063ECDC /* OTPMappingProviderTest.m */,
+				1FF7F34A15BFD93E00694F29 /* OTPObjectManagerTest.m */,
 			);
 			path = OTPClientTests;
 			sourceTree = "<group>";
@@ -538,6 +549,7 @@
 				1F01289D15BE62EF0063ECDC /* OTPLeg.m in Sources */,
 				1F0128A015BE68D60063ECDC /* OTPEncodedPolyline.m in Sources */,
 				1F0128A315BE78580063ECDC /* OTPWalkStep.m in Sources */,
+				1FF7F34815BFA58900694F29 /* OTPObjectManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,6 +569,8 @@
 				1F0128A915BE81210063ECDC /* OTPLegTest.m in Sources */,
 				1F0128AC15BE88840063ECDC /* OTPEncodedPolylineTest.m in Sources */,
 				1F0128AF15BE89DF0063ECDC /* OTPWalkStepTest.m in Sources */,
+				1F0128BF15BF74410063ECDC /* OTPMappingProviderTest.m in Sources */,
+				1FF7F34B15BFD93E00694F29 /* OTPObjectManagerTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
