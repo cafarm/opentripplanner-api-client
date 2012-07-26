@@ -149,6 +149,7 @@
 		1F0128AB15BE88840063ECDC /* OTPEncodedPolylineTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OTPEncodedPolylineTest.m; path = Models/OTPEncodedPolylineTest.m; sourceTree = "<group>"; };
 		1F0128AE15BE89DF0063ECDC /* OTPWalkStepTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OTPWalkStepTest.m; path = Models/OTPWalkStepTest.m; sourceTree = "<group>"; };
 		1F0128BE15BF74410063ECDC /* OTPMappingProviderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTPMappingProviderTest.m; sourceTree = "<group>"; };
+		1F12166C15C200A7007B75A5 /* MACLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MACLog.h; sourceTree = "<group>"; };
 		1F2F404015BCE06500121A2F /* libOTPClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOTPClient.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F2F404315BCE06500121A2F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1F2F404715BCE06500121A2F /* OTPClient-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OTPClient-Prefix.pch"; sourceTree = "<group>"; };
@@ -287,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				1F2F404715BCE06500121A2F /* OTPClient-Prefix.pch */,
+				1F12166C15C200A7007B75A5 /* MACLog.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";

@@ -60,6 +60,7 @@
 - (void)loadTripPlanFrom:(CLLocationCoordinate2D)from
                       to:(CLLocationCoordinate2D)to
                     date:(NSDate *)date
+          numItineraries:(int)numItineraries
           shouldArriveBy:(BOOL)shouldArriveBy
    requiresAccessibility:(BOOL)requiresAccessibility
          maxWalkDistance:(int)maxWalkDistance
@@ -76,6 +77,7 @@
                                      @"fromPlace", [NSString stringWithFormat:@"%f,%f", from.latitude, from.longitude],
                                      @"toPlace", [NSString stringWithFormat:@"%f,%f", to.latitude, to.longitude],
                                      @"date", [dateFormatter stringFromDate:date],
+                                     @"numItineraries", [NSString stringWithFormat:@"%i", numItineraries],
                                      @"time", [timeFormatter stringFromDate:date],
                                      @"arriveBy", shouldArriveBy ? @"true" : @"false",
                                      @"wheelchair", requiresAccessibility ? @"true" : @"false",
@@ -83,6 +85,8 @@
                                      nil];
     
     NSString *resourcePath = [@"/ws/plan" stringByAppendingQueryParameters:queryParameters];
+    
+    DLog(@"Request URL: %@%@", [[self rkObjectManager].baseURL absoluteString], resourcePath);
     
     [[self rkObjectManager] loadObjectsAtResourcePath:resourcePath usingBlock:^(RKObjectLoader *loader) {        
         loader.onDidLoadObject = ^(id object) {
@@ -114,6 +118,7 @@
     [self loadTripPlanFrom:from
                         to:to
                       date:[NSDate date]
+            numItineraries:1
             shouldArriveBy:NO
      requiresAccessibility:NO
            maxWalkDistance:800
