@@ -22,6 +22,15 @@
 		1F0128AC15BE88840063ECDC /* OTPEncodedPolylineTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0128AB15BE88840063ECDC /* OTPEncodedPolylineTest.m */; };
 		1F0128AF15BE89DF0063ECDC /* OTPWalkStepTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0128AE15BE89DF0063ECDC /* OTPWalkStepTest.m */; };
 		1F0128BF15BF74410063ECDC /* OTPMappingProviderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0128BE15BF74410063ECDC /* OTPMappingProviderTest.m */; };
+		1F12167C15C20B27007B75A5 /* OTPObjectManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FF7F34615BFA58900694F29 /* OTPObjectManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F12167D15C20B4D007B75A5 /* OTPTripPlan.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2F409E15BCE49700121A2F /* OTPTripPlan.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F12167E15C20B4D007B75A5 /* OTPPlace.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F01288615BE391F0063ECDC /* OTPPlace.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F12167F15C20B4D007B75A5 /* OTPAgencyAndID.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F01288915BE3AE20063ECDC /* OTPAgencyAndID.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F12168015C20B4D007B75A5 /* OTPItinerary.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2F40A115BCE4AB00121A2F /* OTPItinerary.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F12168115C20B4D007B75A5 /* OTPFare.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F01289815BE62B10063ECDC /* OTPFare.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F12168215C20B4D007B75A5 /* OTPLeg.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F01289B15BE62EE0063ECDC /* OTPLeg.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F12168315C20B4D007B75A5 /* OTPEncodedPolyline.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F01289E15BE68D50063ECDC /* OTPEncodedPolyline.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F12168415C20B4D007B75A5 /* OTPWalkStep.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F0128A115BE78570063ECDC /* OTPWalkStep.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F2F404415BCE06500121A2F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F404315BCE06500121A2F /* Foundation.framework */; };
 		1F2F405315BCE06600121A2F /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F405215BCE06600121A2F /* SenTestingKit.framework */; };
 		1F2F405515BCE06600121A2F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F405415BCE06600121A2F /* UIKit.framework */; };
@@ -113,18 +122,6 @@
 			remoteInfo = RestKit;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		1F2F403E15BCE06500121A2F /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/${PRODUCT_NAME}";
-			dstSubfolderSpec = 16;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1F01288615BE391F0063ECDC /* OTPPlace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OTPPlace.h; path = Models/OTPPlace.h; sourceTree = "<group>"; };
@@ -395,6 +392,25 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		1F12167B15C20AE1007B75A5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F12167C15C20B27007B75A5 /* OTPObjectManager.h in Headers */,
+				1F12167D15C20B4D007B75A5 /* OTPTripPlan.h in Headers */,
+				1F12167E15C20B4D007B75A5 /* OTPPlace.h in Headers */,
+				1F12167F15C20B4D007B75A5 /* OTPAgencyAndID.h in Headers */,
+				1F12168015C20B4D007B75A5 /* OTPItinerary.h in Headers */,
+				1F12168115C20B4D007B75A5 /* OTPFare.h in Headers */,
+				1F12168215C20B4D007B75A5 /* OTPLeg.h in Headers */,
+				1F12168315C20B4D007B75A5 /* OTPEncodedPolyline.h in Headers */,
+				1F12168415C20B4D007B75A5 /* OTPWalkStep.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		1F2F403F15BCE06500121A2F /* OTPClient */ = {
 			isa = PBXNativeTarget;
@@ -402,7 +418,7 @@
 			buildPhases = (
 				1F2F403C15BCE06500121A2F /* Sources */,
 				1F2F403D15BCE06500121A2F /* Frameworks */,
-				1F2F403E15BCE06500121A2F /* CopyFiles */,
+				1F12167B15C20AE1007B75A5 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -658,7 +674,9 @@
 					"-ObjC",
 					"-all_load",
 				);
+				PRIVATE_HEADERS_FOLDER_PATH = ../../Headers/OTPClient/Private;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = ../../Headers/OTPClient;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -674,7 +692,9 @@
 					"-ObjC",
 					"-all_load",
 				);
+				PRIVATE_HEADERS_FOLDER_PATH = ../../Headers/OTPClient/Private;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = ../../Headers/OTPClient;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
