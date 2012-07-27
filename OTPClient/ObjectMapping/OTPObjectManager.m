@@ -13,48 +13,40 @@
 #import "OTPResponse.h"
 #import "OTPPlannerError.h"
 
+static OTPObjectManager *sharedManager;
+
+@interface OTPObjectManager ()
+
+@property (strong, readonly, nonatomic) RKObjectManager *rkObjectManager;
+
+@end
+
 @implementation OTPObjectManager
-{
-    RKObjectManager *_rkObjectManager;
-}
+
+@synthesize rkObjectManager=_rkObjectManager;
 
 + (OTPObjectManager *)sharedManager
 {
-    static OTPObjectManager *sharedManager = nil;
-    if (!sharedManager) {
-        sharedManager = [[super allocWithZone:nil] init];
-    }
     return sharedManager;
 }
 
-+ (id)allocWithZone:(NSZone *)zone
+- (id)initWithBaseURL:(NSURL *)baseURL
 {
-    return [self sharedManager];
-}
-
-- (void)setBaseURL:(NSURL *)baseURL
-{
-    [self createRKObjectManagerWithBaseURL:baseURL];
+    self = [super init];
+    if (self) {
+        _rkObjectManager = [RKObjectManager managerWithBaseURL:baseURL];
+        _rkObjectManager.mappingProvider = [[OTPMappingProvider alloc] init];
+        [_rkObjectManager.client setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+        
+        sharedManager = self;
+    }
+    
+    return self;
 }
 
 - (NSURL *)baseURL
 {
-    return [self rkObjectManager].baseURL;
-}
-
-- (void)createRKObjectManagerWithBaseURL:(NSURL *)baseURL
-{
-    _rkObjectManager = [RKObjectManager managerWithBaseURL:baseURL];
-    _rkObjectManager.mappingProvider = [[OTPMappingProvider alloc] init];
-    [_rkObjectManager.client setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-}
-
-- (RKObjectManager *)rkObjectManager
-{
-    if (!_rkObjectManager) {
-        [self createRKObjectManagerWithBaseURL:[NSURL URLWithString:@"http://127.0.0.1:4567"]];
-    }
-    return _rkObjectManager;
+    return self.rkObjectManager.baseURL;
 }
 
 - (void)loadTripPlanFrom:(CLLocationCoordinate2D)from
@@ -88,7 +80,7 @@
     
     DLog(@"Request URL: %@%@", [[self rkObjectManager].baseURL absoluteString], resourcePath);
     
-    [[self rkObjectManager] loadObjectsAtResourcePath:resourcePath usingBlock:^(RKObjectLoader *loader) {        
+    [self.rkObjectManager loadObjectsAtResourcePath:resourcePath usingBlock:^(RKObjectLoader *loader) {
         loader.onDidLoadObject = ^(id object) {
             OTPResponse *response = (OTPResponse *)object;
             

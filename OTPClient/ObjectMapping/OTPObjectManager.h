@@ -14,9 +14,11 @@
 
 @interface OTPObjectManager : NSObject
 
-@property (strong, nonatomic) NSURL *baseURL;
+@property (strong, readonly, nonatomic) NSURL *baseURL;
 
 + (OTPObjectManager *)sharedManager;
+
+- (id)initWithBaseURL:(NSURL *)baseURL;
 
 - (void)loadTripPlanFrom:(CLLocationCoordinate2D)from
                       to:(CLLocationCoordinate2D)to

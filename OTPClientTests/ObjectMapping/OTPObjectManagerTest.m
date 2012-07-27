@@ -47,9 +47,8 @@
 
 - (void)testLoadingOfTripPlan
 {
-    OTPObjectManager *objectManager = [[OTPObjectManager alloc] init];
-    objectManager.baseURL = [RKTestFactory baseURL];
-//    objectManager.baseURL = [NSURL URLWithString:@"http://localhost:8080/opentripplanner-api-webapp"];
+    OTPObjectManager *objectManager = [[OTPObjectManager alloc] initWithBaseURL:RKTestFactory.baseURL];
+//    OTPObjectManager *objectManager = [[OTPObjectManager alloc] initWithBaseURL:[NSURL URLWithString:@"http://localhost:8080/opentripplanner-api-webapp"]];
     
     CLLocationCoordinate2D from;
     from.latitude = 47.656771;
