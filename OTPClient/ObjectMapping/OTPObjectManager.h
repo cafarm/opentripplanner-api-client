@@ -12,6 +12,8 @@
 @class OTPPlace;
 @class OTPTripPlan;
 
+typedef void (^OTPTripPlanCompletionHandler)(OTPTripPlan *tripPlan, NSError *error);
+
 @interface OTPObjectManager : NSObject
 
 @property (strong, readonly, nonatomic) NSURL *baseURL;
@@ -28,10 +30,10 @@
    requiresAccessibility:(BOOL)requiresAccessibility
          maxWalkDistance:(int)maxWalkDistance
          transferPenalty:(int)transferPenalty
-          withCompletion:(void (^)(OTPTripPlan *tripPlan, NSError *error))block;
+       completionHandler:(OTPTripPlanCompletionHandler)completionHandler;
 
 - (void)loadTripPlanFrom:(CLLocationCoordinate2D)from
                       to:(CLLocationCoordinate2D)to
-          withCompletion:(void (^)(OTPTripPlan *tripPlan, NSError *error))block;
+       completionHandler:(OTPTripPlanCompletionHandler)completionHandler;
 
 @end

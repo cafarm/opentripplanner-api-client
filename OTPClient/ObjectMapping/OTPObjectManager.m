@@ -57,7 +57,7 @@ static OTPObjectManager *sharedManager;
    requiresAccessibility:(BOOL)requiresAccessibility
          maxWalkDistance:(int)maxWalkDistance
          transferPenalty:(int)transferPenalty
-          withCompletion:(void (^)(OTPTripPlan *tripPlan, NSError *error))block
+       completionHandler:(OTPTripPlanCompletionHandler)completionHandler
 {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"MM/dd/yyyy"];
@@ -81,6 +81,7 @@ static OTPObjectManager *sharedManager;
     DLog(@"Request URL: %@%@", [[self rkObjectManager].baseURL absoluteString], resourcePath);
     
     [self.rkObjectManager loadObjectsAtResourcePath:resourcePath usingBlock:^(RKObjectLoader *loader) {
+        
         loader.onDidLoadObject = ^(id object) {
             OTPResponse *response = (OTPResponse *)object;
             
@@ -90,14 +91,16 @@ static OTPObjectManager *sharedManager;
             if (response.plannerError) {
                 NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
                 [userInfo setValue:response.plannerError.message forKey:NSLocalizedDescriptionKey];
-                error = [NSError errorWithDomain:@"domain" code:200 userInfo:userInfo];
+                error = [NSError errorWithDomain:@"com.sevenoeight.OTPClient"
+                                            code:[response.plannerError.ID intValue]
+                                        userInfo:userInfo];
             }
             
-            block(tripPlan, error);
+            completionHandler(tripPlan, error);
         };
         
         loader.onDidFailWithError = ^(NSError *error) {
-            block(nil, error);
+            completionHandler(nil, error);
         };
     }];
 }
@@ -105,7 +108,7 @@ static OTPObjectManager *sharedManager;
 
 - (void)loadTripPlanFrom:(CLLocationCoordinate2D)from
                       to:(CLLocationCoordinate2D)to
-          withCompletion:(void (^)(OTPTripPlan *, NSError *))block
+       completionHandler:(OTPTripPlanCompletionHandler)completionHandler
 {
     [self loadTripPlanFrom:from
                         to:to
@@ -115,7 +118,7 @@ static OTPObjectManager *sharedManager;
      requiresAccessibility:NO
            maxWalkDistance:800
            transferPenalty:0
-            withCompletion:block];
+         completionHandler:completionHandler];
 }
 
 @end

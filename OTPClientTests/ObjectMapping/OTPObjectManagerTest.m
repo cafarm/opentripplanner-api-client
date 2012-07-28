@@ -60,7 +60,7 @@
     
     __block OTPTripPlan *loadedTripPlan;
     __block NSError *loadedError;
-    [objectManager loadTripPlanFrom:from to:to withCompletion:^(OTPTripPlan *tripPlan, NSError *error) {
+    [objectManager loadTripPlanFrom:from to:to completionHandler:^(OTPTripPlan *tripPlan, NSError *error) {
         loadedTripPlan = tripPlan;
         loadedError = error;
         done = YES;
