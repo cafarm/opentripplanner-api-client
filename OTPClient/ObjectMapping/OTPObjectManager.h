@@ -16,11 +16,11 @@ typedef void (^OTPTripPlanCompletionHandler)(OTPTripPlan *tripPlan, NSError *err
 
 @interface OTPObjectManager : NSObject
 
-@property (strong, readonly, nonatomic) NSURL *baseURL;
-
 + (OTPObjectManager *)sharedManager;
 
 - (id)initWithBaseURL:(NSURL *)baseURL;
+
+@property (strong, readonly, nonatomic) NSURL *baseURL;
 
 - (void)loadTripPlanFrom:(CLLocationCoordinate2D)from
                       to:(CLLocationCoordinate2D)to
