@@ -31,6 +31,10 @@
 		1F12168215C20B4D007B75A5 /* OTPLeg.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F01289B15BE62EE0063ECDC /* OTPLeg.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F12168315C20B4D007B75A5 /* OTPEncodedPolyline.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F01289E15BE68D50063ECDC /* OTPEncodedPolyline.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F12168415C20B4D007B75A5 /* OTPWalkStep.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F0128A115BE78570063ECDC /* OTPWalkStep.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F16165C15C632E100F891DC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F16165B15C632E100F891DC /* CoreLocation.framework */; };
+		1F16165E15C6331B00F891DC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F16165D15C6331B00F891DC /* MapKit.framework */; };
+		1F16165F15C633BC00F891DC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F16165D15C6331B00F891DC /* MapKit.framework */; };
+		1F16166015C633C300F891DC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F16165B15C632E100F891DC /* CoreLocation.framework */; };
 		1F2F404415BCE06500121A2F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F404315BCE06500121A2F /* Foundation.framework */; };
 		1F2F405315BCE06600121A2F /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F405215BCE06600121A2F /* SenTestingKit.framework */; };
 		1F2F405515BCE06600121A2F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F405415BCE06600121A2F /* UIKit.framework */; };
@@ -146,6 +150,8 @@
 		1F0128AE15BE89DF0063ECDC /* OTPWalkStepTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OTPWalkStepTest.m; path = Models/OTPWalkStepTest.m; sourceTree = "<group>"; };
 		1F0128BE15BF74410063ECDC /* OTPMappingProviderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OTPMappingProviderTest.m; path = ObjectMapping/OTPMappingProviderTest.m; sourceTree = "<group>"; };
 		1F12166C15C200A7007B75A5 /* MACLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MACLog.h; path = SupportingFiles/MACLog.h; sourceTree = "<group>"; };
+		1F16165B15C632E100F891DC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		1F16165D15C6331B00F891DC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		1F2F404015BCE06500121A2F /* libOTPClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOTPClient.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F2F404315BCE06500121A2F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1F2F404715BCE06500121A2F /* OTPClient-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "OTPClient-Prefix.pch"; path = "SupportingFiles/OTPClient-Prefix.pch"; sourceTree = "<group>"; };
@@ -192,6 +198,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F16165E15C6331B00F891DC /* MapKit.framework in Frameworks */,
+				1F16165C15C632E100F891DC /* CoreLocation.framework in Frameworks */,
 				1F2F40AF15BCEA3700121A2F /* CoreGraphics.framework in Frameworks */,
 				1F2F409515BCE30100121A2F /* libxml2.2.dylib in Frameworks */,
 				1F2F409315BCE2F800121A2F /* QuartzCore.framework in Frameworks */,
@@ -209,6 +217,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F16166015C633C300F891DC /* CoreLocation.framework in Frameworks */,
+				1F16165F15C633BC00F891DC /* MapKit.framework in Frameworks */,
 				1F2F40B015BCEA4200121A2F /* CoreGraphics.framework in Frameworks */,
 				1F2F409C15BCE34700121A2F /* libxml2.2.dylib in Frameworks */,
 				1F2F409B15BCE34000121A2F /* QuartzCore.framework in Frameworks */,
@@ -250,6 +260,8 @@
 		1F2F404215BCE06500121A2F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1F16165D15C6331B00F891DC /* MapKit.framework */,
+				1F16165B15C632E100F891DC /* CoreLocation.framework */,
 				1F2F40AE15BCEA3700121A2F /* CoreGraphics.framework */,
 				1F2F409215BCE2F800121A2F /* QuartzCore.framework */,
 				1F2F409015BCE2EF00121A2F /* SystemConfiguration.framework */,

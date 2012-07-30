@@ -10,6 +10,7 @@
 
 @class OTPPlace;
 @class OTPEncodedPolyline;
+@class MKPolyline;
 
 @interface OTPLeg : NSObject
 
@@ -30,5 +31,8 @@
 @property (strong, nonatomic) OTPEncodedPolyline *legGeometry;
 @property (strong, nonatomic) NSArray *walkSteps;
 @property (strong, nonatomic) NSNumber *duration;
+
+// Convenience
+@property (readonly, strong, nonatomic) MKPolyline *polyline;
 
 @end
