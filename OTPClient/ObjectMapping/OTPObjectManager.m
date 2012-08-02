@@ -13,40 +13,34 @@
 #import "OTPResponse.h"
 #import "OTPPlannerError.h"
 
-static OTPObjectManager *sharedManager;
-
 @interface OTPObjectManager ()
 
-@property (strong, readonly, nonatomic) RKObjectManager *rkObjectManager;
+@property (readonly, nonatomic) RKObjectManager *rkObjectManager;
 
 @end
 
 @implementation OTPObjectManager
 
-@synthesize rkObjectManager=_rkObjectManager;
-
-+ (OTPObjectManager *)sharedManager
-{
-    return sharedManager;
-}
+@synthesize baseURL = _baseURL;
+@synthesize rkObjectManager = _rkObjectManager;
 
 - (id)initWithBaseURL:(NSURL *)baseURL
 {
     self = [super init];
     if (self) {
-        _rkObjectManager = [RKObjectManager managerWithBaseURL:baseURL];
-        _rkObjectManager.mappingProvider = [[OTPMappingProvider alloc] init];
-        [_rkObjectManager.client setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-        
-        sharedManager = self;
+        _baseURL = baseURL;
     }
-    
     return self;
 }
 
-- (NSURL *)baseURL
+-(RKObjectManager *)rkObjectManager
 {
-    return self.rkObjectManager.baseURL;
+    if (_rkObjectManager == nil) {
+        _rkObjectManager = [RKObjectManager managerWithBaseURL:self.baseURL];
+        _rkObjectManager.mappingProvider = [[OTPMappingProvider alloc] init];
+        [_rkObjectManager.client setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    }
+    return _rkObjectManager;
 }
 
 - (void)loadTripPlanFrom:(CLLocationCoordinate2D)from
