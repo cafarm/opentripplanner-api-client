@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @class OTPFare;
+@class OTPLeg;
 
 @interface OTPItinerary : NSObject
 
@@ -24,5 +25,9 @@
 @property (strong, nonatomic) NSNumber *transfers;
 @property (strong, nonatomic) OTPFare *fare;
 @property (strong, nonatomic) NSArray *legs;
+
+@property (nonatomic) BOOL isStarted;
+@property (nonatomic) unsigned int currentLegIndex;
+@property (readonly, nonatomic) OTPLeg *currentLeg;
 
 @end
