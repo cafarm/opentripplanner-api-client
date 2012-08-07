@@ -12,9 +12,18 @@
 @class OTPEncodedPolyline;
 @class MKPolyline;
 
+typedef enum {
+    OTPWalk,
+    OTPBus,
+    OTPTram,
+    OTPRail,
+    OTPFerry
+} OTPTraverseMode;
+
 @interface OTPLeg : NSObject
 
-@property (strong, nonatomic) NSString *mode;
+@property (strong, nonatomic) NSString *modeString;
+@property (nonatomic) OTPTraverseMode mode;
 @property (strong, nonatomic) NSString *route;
 @property (strong, nonatomic) NSNumber *interlineWithPreviousLeg;
 @property (strong, nonatomic) NSString *tripShortName;

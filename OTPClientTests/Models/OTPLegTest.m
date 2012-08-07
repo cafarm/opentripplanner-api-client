@@ -59,11 +59,20 @@
     return [RKMappingTest testForMapping:[self mapping] object:[self transitData]];
 }
 
-- (void)testMappingOfMode
+- (void)testMappingOfWalkMode
 {
-    RKMappingTest *mappingTest = [self walkMappingTest];
-    [mappingTest expectMappingFromKeyPath:@"mode" toKeyPath:@"mode" withValue:@"WALK"];
-    STAssertNoThrow([mappingTest verify], nil);
+    OTPLeg *leg = [[OTPLeg alloc] init];
+    RKMappingTest *mappingTest = [RKMappingTest testForMapping:[self mapping] sourceObject:[self walkData] destinationObject:leg];
+    [mappingTest performMapping];
+    STAssertTrue(leg.mode == OTPWalk, nil);
+}
+
+- (void)testMappingOfBusMode
+{
+    OTPLeg *leg = [[OTPLeg alloc] init];
+    RKMappingTest *mappingTest = [RKMappingTest testForMapping:[self mapping] sourceObject:[self transitData] destinationObject:leg];
+    [mappingTest performMapping];
+    STAssertTrue(leg.mode == OTPBus, nil);
 }
 
 - (void)testMappingOfRoute

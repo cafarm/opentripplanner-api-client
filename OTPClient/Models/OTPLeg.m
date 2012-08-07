@@ -11,6 +11,7 @@
 
 @implementation OTPLeg
 
+@synthesize modeString = _modeString;
 @synthesize mode;
 @synthesize route;
 @synthesize interlineWithPreviousLeg;
@@ -26,6 +27,23 @@
 @synthesize legGeometry;
 @synthesize walkSteps;
 @synthesize duration;
+
+- (void)setModeString:(NSString *)modeString
+{
+    if ([modeString isEqualToString:@"WALK"]) {
+        self.mode = OTPWalk;
+    } else if ([modeString isEqualToString:@"BUS"]) {
+        self.mode = OTPBus;
+    } else if ([modeString isEqualToString:@"TRAM"]) {
+        self.mode = OTPTram;
+    } else if ([modeString isEqualToString:@"RAIL"]) {
+        self.mode = OTPRail;
+    } else if ([modeString isEqualToString:@"FERRY"]) {
+        self.mode = OTPFerry;
+    }
+    
+    _modeString = modeString;
+}
 
 - (void)setStartTimeAsTimeInterval:(NSNumber *)startTimeAsTimeInterval
 {
