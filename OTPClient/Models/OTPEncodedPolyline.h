@@ -8,12 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+@class OTPLeg;
 @class MKPolyline;
 
 @interface OTPEncodedPolyline : NSObject
 
 @property (strong, nonatomic) NSString *points;
 @property (strong, nonatomic) NSNumber *length;
+
+@property (weak, nonatomic) OTPLeg *leg;
 
 // Convenience
 - (MKPolyline *)polylineValue;

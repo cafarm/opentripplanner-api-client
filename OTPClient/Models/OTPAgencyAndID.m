@@ -7,10 +7,13 @@
 //
 
 #import "OTPAgencyAndID.h"
+#import "OTPPlace.h"
 
 @implementation OTPAgencyAndID
 
 @synthesize ID;
 @synthesize agencyID;
+
+@synthesize place;
 
 @end

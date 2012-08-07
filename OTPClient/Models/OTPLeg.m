@@ -7,11 +7,13 @@
 //
 
 #import "OTPLeg.h"
+#import "OTPPlace.h"
+#import "OTPEncodedPolyline.h"
+#import "OTPWalkStep.h"
 #import "NSDate+OTPTimeInterval.h"
 
 @implementation OTPLeg
 
-@synthesize modeString = _modeString;
 @synthesize mode;
 @synthesize route;
 @synthesize interlineWithPreviousLeg;
@@ -28,21 +30,61 @@
 @synthesize walkSteps;
 @synthesize duration;
 
-- (void)setModeString:(NSString *)modeString
+@synthesize itinerary;
+
+// Add leg reference to from
+- (BOOL)validateFrom:(id *)ioValue error:(NSError **)outError
 {
-    if ([modeString isEqualToString:@"WALK"]) {
-        self.mode = OTPWalk;
-    } else if ([modeString isEqualToString:@"BUS"]) {
-        self.mode = OTPBus;
-    } else if ([modeString isEqualToString:@"TRAM"]) {
-        self.mode = OTPTram;
-    } else if ([modeString isEqualToString:@"RAIL"]) {
-        self.mode = OTPRail;
-    } else if ([modeString isEqualToString:@"FERRY"]) {
-        self.mode = OTPFerry;
+    OTPPlace *fromValue = (OTPPlace *)*ioValue;
+    fromValue.leg = self;
+    return YES;
+}
+
+// Add leg reference to to
+- (BOOL)validateTo:(id *)ioValue error:(NSError **)outError
+{
+    OTPPlace *toValue = (OTPPlace *)*ioValue;
+    toValue.leg = self;
+    return YES;
+}
+
+// Add leg reference to legGeometry
+- (BOOL)validateLegGeometry:(id *)ioValue error:(NSError **)outError
+{
+    OTPEncodedPolyline *legGeometryValue = (OTPEncodedPolyline *)*ioValue;
+    legGeometryValue.leg = self;
+    return YES;
+}
+
+// Add leg reference to walkSteps
+- (BOOL)validateWalkSteps:(id *)ioValue error:(NSError **)outError
+{
+    NSArray *walkStepsValue = (NSArray *)*ioValue;
+    for (OTPWalkStep *walkStep in walkStepsValue) {
+        walkStep.leg = self;
     }
+    return YES;
+}
+
+// Convert mode string to mode type prior to assignment
+- (BOOL)validateMode:(id *)ioValue error:(NSError **)outError
+{
+    NSString *stringValue = (NSString *)*ioValue;
     
-    _modeString = modeString;
+    if ([stringValue isEqualToString:@"WALK"]) {
+        *ioValue = [NSNumber numberWithInt:OTPWalk];
+    } else if ([stringValue isEqualToString:@"BUS"]) {
+        *ioValue = [NSNumber numberWithInt:OTPBus];
+    } else if ([stringValue isEqualToString:@"TRAM"]) {
+        *ioValue = [NSNumber numberWithInt:OTPTram];
+    } else if ([stringValue isEqualToString:@"RAIL"]) {
+        *ioValue = [NSNumber numberWithInt:OTPRail];
+    } else if ([stringValue isEqualToString:@"FERRY"]) {
+        *ioValue = [NSNumber numberWithInt:OTPFerry];
+    } else {
+        return NO;
+    }
+    return YES;
 }
 
 - (void)setStartTimeAsTimeInterval:(NSNumber *)startTimeAsTimeInterval

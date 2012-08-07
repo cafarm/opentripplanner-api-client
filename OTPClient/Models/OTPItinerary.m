@@ -7,6 +7,8 @@
 //
 
 #import "OTPItinerary.h"
+#import "OTPLeg.h"
+#import "OTPFare.h"
 #import "NSDate+OTPTimeInterval.h"
 
 @implementation OTPItinerary
@@ -21,6 +23,26 @@
 @synthesize transfers;
 @synthesize fare;
 @synthesize legs;
+
+@synthesize tripPlan;
+
+// Add parent itinerary reference to legs
+- (BOOL)validateLegs:(id *)ioValue error:(NSError **)outError
+{
+    NSArray *legsValue = (NSArray *)*ioValue;
+    for (OTPLeg *leg in legsValue) {
+        leg.itinerary = self;
+    }
+    return YES;
+}
+
+// Add parent itinerary reference to fare
+- (BOOL)validateFare:(id *)ioValue error:(NSError **)outError
+{
+    OTPFare *fareValue = (OTPFare *)*ioValue;
+    fareValue.itinerary = self;
+    return YES;
+}
 
 - (void)setStartTimeAsTimeInterval:(NSNumber *)startTimeAsTimeInterval
 {

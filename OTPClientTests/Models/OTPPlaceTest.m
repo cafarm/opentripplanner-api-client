@@ -57,7 +57,7 @@
 {
     RKMappingTest *mappingTest = [self mappingTest];
     [mappingTest expectMappingFromKeyPath:@"stopId" toKeyPath:@"stopID" passingTest:^BOOL(RKObjectAttributeMapping *mapping, id value) {
-        return [value isKindOfClass:[OTPAgencyAndID class]] && [((OTPAgencyAndID *)value).ID isEqualToString:@"23925"];
+        return [value isKindOfClass:[OTPAgencyAndID class]] && [((OTPAgencyAndID *)value).ID isEqualToString:@"23925"] && ((OTPAgencyAndID *)value).place != nil;
     }];
     STAssertNoThrow([mappingTest verify], nil);
 }

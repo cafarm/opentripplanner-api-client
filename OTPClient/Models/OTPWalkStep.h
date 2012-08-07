@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class OTPLeg;
+
 @interface OTPWalkStep : NSObject
 
 @property (strong, nonatomic) NSNumber *distance;
@@ -19,5 +21,7 @@
 @property (strong, nonatomic) NSNumber *bogusName;
 @property (strong, nonatomic) NSNumber *longitude;
 @property (strong, nonatomic) NSNumber *latitude;
+
+@property (weak, nonatomic) OTPLeg *leg;
 
 @end

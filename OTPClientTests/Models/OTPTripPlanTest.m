@@ -77,7 +77,11 @@
 {
     RKMappingTest *mappingTest = [self mappingTest];
     [mappingTest expectMappingFromKeyPath:@"itineraries" toKeyPath:@"itineraries" passingTest:^BOOL(RKObjectAttributeMapping *mapping, id value) {
-        return [value isKindOfClass:[NSArray class]] && [value count] == 3;
+        BOOL isSuccessful = [value isKindOfClass:[NSArray class]] && [value count] == 3;
+        for (OTPItinerary *itinerary in value) {
+            isSuccessful &= itinerary.tripPlan != nil;
+        }
+        return isSuccessful;
     }];
     STAssertNoThrow([mappingTest verify], nil);
 }

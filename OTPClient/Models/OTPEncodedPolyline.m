@@ -9,6 +9,7 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 
+#import "OTPLeg.h"
 #import "OTPEncodedPolyline.h"
 
 @implementation OTPEncodedPolyline

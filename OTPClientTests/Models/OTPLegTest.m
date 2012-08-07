@@ -137,7 +137,7 @@
 {
     RKMappingTest *mappingTest = [self transitMappingTest];
     [mappingTest expectMappingFromKeyPath:@"from" toKeyPath:@"from" passingTest:^BOOL(RKObjectAttributeMapping *mapping, id value) {
-        return [value isKindOfClass:[OTPPlace class]] && [((OTPPlace *)value).name isEqualToString:@"25TH AVE NE & NE 47TH ST"];
+        return [value isKindOfClass:[OTPPlace class]] && [((OTPPlace *)value).name isEqualToString:@"25TH AVE NE & NE 47TH ST"] && ((OTPPlace *)value).leg != nil;
     }];
     STAssertNoThrow([mappingTest verify], nil);
 }
@@ -146,7 +146,7 @@
 {
     RKMappingTest *mappingTest = [self transitMappingTest];
     [mappingTest expectMappingFromKeyPath:@"to" toKeyPath:@"to" passingTest:^BOOL(RKObjectAttributeMapping *mapping, id value) {
-        return [value isKindOfClass:[OTPPlace class]] && [((OTPPlace *)value).name isEqualToString:@"NE 40TH ST & 7TH AVE NE"];
+        return [value isKindOfClass:[OTPPlace class]] && [((OTPPlace *)value).name isEqualToString:@"NE 40TH ST & 7TH AVE NE"] && ((OTPPlace *)value).leg != nil;
     }];
     STAssertNoThrow([mappingTest verify], nil);
 }
@@ -155,7 +155,7 @@
 {
     RKMappingTest *mappingTest = [self transitMappingTest];
     [mappingTest expectMappingFromKeyPath:@"legGeometry" toKeyPath:@"legGeometry" passingTest:^BOOL(RKObjectAttributeMapping *mapping, id value) {
-        return [value isKindOfClass:[OTPEncodedPolyline class]] && [((OTPEncodedPolyline *)value).length isEqualToNumber:[NSNumber numberWithInt:75]];
+        return [value isKindOfClass:[OTPEncodedPolyline class]] && [((OTPEncodedPolyline *)value).length isEqualToNumber:[NSNumber numberWithInt:75]] && ((OTPEncodedPolyline *)value).leg != nil;
     }];
     STAssertNoThrow([mappingTest verify], nil);
 }
@@ -164,7 +164,11 @@
 {
     RKMappingTest *mappingTest = [self walkMappingTest];
     [mappingTest expectMappingFromKeyPath:@"steps" toKeyPath:@"walkSteps" passingTest:^BOOL(RKObjectAttributeMapping *mapping, id value) {
-        return [value isKindOfClass:[NSArray class]] && [value count] == 3;
+        BOOL isSuccessful = [value isKindOfClass:[NSArray class]] && [value count] == 3;
+        for (OTPWalkStep *walkStep in value) {
+            isSuccessful &= walkStep.leg != nil;
+        }
+        return isSuccessful;
     }];
     STAssertNoThrow([mappingTest verify], nil);
 }

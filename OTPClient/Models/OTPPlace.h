@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @class OTPAgencyAndID;
+@class OTPLeg;
 
 @interface OTPPlace : NSObject
 
@@ -21,5 +22,7 @@
 @property (strong, nonatomic) NSDate *arrival;
 @property (strong, nonatomic) NSNumber *depatureAsTimeInterval;
 @property (strong, nonatomic) NSDate *departure;
+
+@property (weak, nonatomic) OTPLeg *leg;
 
 @end

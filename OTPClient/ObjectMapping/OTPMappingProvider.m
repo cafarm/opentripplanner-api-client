@@ -134,10 +134,9 @@
 {
     RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[OTPLeg class]];
 
-    [mapping mapAttributes:@"route", @"interlineWithPreviousLeg", @"tripShortName", @"headsign", @"distance",
+    [mapping mapAttributes:@"mode", @"route", @"interlineWithPreviousLeg", @"tripShortName", @"headsign", @"distance",
      @"duration", nil];
     [mapping mapKeyPathsToAttributes:
-     @"mode", @"modeString",
      @"tripId", @"tripID",
      @"startTime", @"startTimeAsTimeInterval",
      @"endTime", @"endTimeAsTimeInterval",

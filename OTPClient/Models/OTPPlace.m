@@ -7,6 +7,7 @@
 //
 
 #import "OTPPlace.h"
+#import "OTPAgencyAndID.h"
 #import "NSDate+OTPTimeInterval.h"
 
 @implementation OTPPlace
@@ -18,6 +19,16 @@
 @synthesize latitude;
 @synthesize arrival;
 @synthesize departure;
+
+@synthesize leg;
+
+// Add parent place reference to stopID
+- (BOOL)validateStopID:(id *)ioValue error:(NSError **)outError
+{
+    OTPAgencyAndID *stopIDValue = (OTPAgencyAndID *)*ioValue;
+    stopIDValue.place = self;
+    return YES;
+}
 
 - (void)setArrivalAsTimeInterval:(NSNumber *)arrivalAsTimeInterval
 {

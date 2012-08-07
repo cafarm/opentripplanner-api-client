@@ -7,6 +7,7 @@
 //
 
 #import "OTPWalkStep.h"
+#import "OTPLeg.h"
 
 @implementation OTPWalkStep
 
@@ -19,5 +20,7 @@
 @synthesize bogusName;
 @synthesize longitude;
 @synthesize latitude;
+
+@synthesize leg;
 
 @end

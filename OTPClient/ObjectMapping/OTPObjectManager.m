@@ -11,7 +11,14 @@
 #import "OTPObjectManager.h"
 #import "OTPMappingProvider.h"
 #import "OTPResponse.h"
+#import "OTPTripPlan.h"
 #import "OTPPlannerError.h"
+#import "OTPPlace.h"
+#import "OTPItinerary.h"
+#import "OTPFare.h"
+#import "OTPLeg.h"
+#import "OTPEncodedPolyline.h"
+#import "OTPWalkStep.h"
 
 @interface OTPObjectManager ()
 

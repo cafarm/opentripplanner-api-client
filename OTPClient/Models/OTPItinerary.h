@@ -10,6 +10,7 @@
 
 @class OTPFare;
 @class OTPLeg;
+@class OTPTripPlan;
 
 @interface OTPItinerary : NSObject
 
@@ -25,5 +26,7 @@
 @property (strong, nonatomic) NSNumber *transfers;
 @property (strong, nonatomic) OTPFare *fare;
 @property (strong, nonatomic) NSArray *legs;
+
+@property (weak, nonatomic) OTPTripPlan *tripPlan;
 
 @end

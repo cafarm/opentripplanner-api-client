@@ -10,4 +10,6 @@
 
 @implementation OTPFare
 
+@synthesize itinerary;
+
 @end

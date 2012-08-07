@@ -8,9 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+@class OTPPlace;
+
 @interface OTPAgencyAndID : NSObject
 
 @property (strong, nonatomic) NSString *ID;
 @property (strong, nonatomic) NSString *agencyID;
+
+@property (weak, nonatomic) OTPPlace *place;
 
 @end

@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+@class OTPItinerary;
+
 @interface OTPFare : NSObject
+
+@property (weak, nonatomic) OTPItinerary *itinerary;
 
 @end

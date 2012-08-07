@@ -12,6 +12,7 @@
 
 #import "OTPMappingProvider.h"
 #import "OTPItinerary.h"
+#import "OTPLeg.h"
 #import "OTPFare.h"
 
 @interface OTPItineraryTest : SenTestCase
@@ -115,7 +116,11 @@
 {
     RKMappingTest *mappingTest = [self mappingTest];
     [mappingTest expectMappingFromKeyPath:@"legs" toKeyPath:@"legs" passingTest:^BOOL(RKObjectAttributeMapping *mapping, id value) {
-        return [value isKindOfClass:[NSArray class]] && [value count] == 6;
+        BOOL isSuccessful = [value isKindOfClass:[NSArray class]] && [value count] == 6;
+        for (OTPLeg *leg in value) {
+            isSuccessful &= leg.itinerary != nil;
+        }
+        return isSuccessful;
     }];
     STAssertNoThrow([mappingTest verify], nil);
 }

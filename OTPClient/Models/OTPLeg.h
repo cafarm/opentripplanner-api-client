@@ -10,7 +10,7 @@
 
 @class OTPPlace;
 @class OTPEncodedPolyline;
-@class MKPolyline;
+@class OTPItinerary;
 
 typedef enum {
     OTPWalk,
@@ -22,7 +22,6 @@ typedef enum {
 
 @interface OTPLeg : NSObject
 
-@property (strong, nonatomic) NSString *modeString;
 @property (nonatomic) OTPTraverseMode mode;
 @property (strong, nonatomic) NSString *route;
 @property (strong, nonatomic) NSNumber *interlineWithPreviousLeg;
@@ -40,5 +39,7 @@ typedef enum {
 @property (strong, nonatomic) OTPEncodedPolyline *legGeometry;
 @property (strong, nonatomic) NSArray *walkSteps;
 @property (strong, nonatomic) NSNumber *duration;
+
+@property (weak, nonatomic) OTPItinerary *itinerary;
 
 @end
