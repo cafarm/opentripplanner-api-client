@@ -19,7 +19,4 @@
 @property (strong, nonatomic) OTPPlace *to;
 @property (strong, nonatomic) NSArray *itineraries;
 
-@property (nonatomic) unsigned int preferredItineraryIndex;
-@property (readonly, nonatomic) OTPItinerary *preferredItinerary;
-
 @end

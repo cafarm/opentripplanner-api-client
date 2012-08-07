@@ -8,9 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+@class MKPolyline;
+
 @interface OTPEncodedPolyline : NSObject
 
 @property (strong, nonatomic) NSString *points;
 @property (strong, nonatomic) NSNumber *length;
+
+// Convenience
+- (MKPolyline *)polylineValue;
 
 @end

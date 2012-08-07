@@ -22,22 +22,6 @@
 @synthesize fare;
 @synthesize legs;
 
-@synthesize isStarted = _isStarted;
-@synthesize currentLegIndex = _currentLegIndex;
-@synthesize currentLeg = _currentLeg;
-
-- (void)setCurrentLegIndex:(unsigned int)currentLegIndex
-{
-    NSAssert(currentLegIndex < [self.legs count], @"Leg index is out of bounds");
-    
-    _currentLegIndex = currentLegIndex;
-}
-
-- (OTPLeg *)currentLeg
-{
-    return [self.legs objectAtIndex:self.currentLegIndex];
-}
-
 - (void)setStartTimeAsTimeInterval:(NSNumber *)startTimeAsTimeInterval
 {
     self.startTime = [NSDate dateWithOTPTimeInterval:[startTimeAsTimeInterval doubleValue]];

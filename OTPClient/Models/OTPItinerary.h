@@ -26,8 +26,4 @@
 @property (strong, nonatomic) OTPFare *fare;
 @property (strong, nonatomic) NSArray *legs;
 
-@property (nonatomic) BOOL isStarted;
-@property (nonatomic) unsigned int currentLegIndex;
-@property (readonly, nonatomic) OTPLeg *currentLeg;
-
 @end

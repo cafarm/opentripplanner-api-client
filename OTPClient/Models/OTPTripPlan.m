@@ -17,21 +17,6 @@
 @synthesize to;
 @synthesize itineraries;
 
-@synthesize preferredItineraryIndex = _preferredItineraryIndex;
-@synthesize preferredItinerary = _preferredItinerary;
-
-- (void)setPreferredItineraryIndex:(unsigned int)preferredItineraryIndex
-{
-    NSAssert(preferredItineraryIndex < [self.itineraries count], @"Itinerary index out of bounds");
-    
-    _preferredItineraryIndex = preferredItineraryIndex;
-}
-
-- (OTPItinerary *)preferredItinerary
-{
-    return [self.itineraries objectAtIndex:self.preferredItineraryIndex];
-}
-
 // OTP json dates are in unix epoch milliseconds not the standard seconds
 - (void)setDateAsTimeInterval:(NSNumber *)dateAsTimeInterval
 {

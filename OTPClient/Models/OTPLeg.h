@@ -32,7 +32,4 @@
 @property (strong, nonatomic) NSArray *walkSteps;
 @property (strong, nonatomic) NSNumber *duration;
 
-// Convenience
-@property (readonly, strong, nonatomic) MKPolyline *polyline;
-
 @end
