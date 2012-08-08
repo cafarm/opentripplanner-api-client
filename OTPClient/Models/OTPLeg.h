@@ -25,6 +25,7 @@ typedef enum {
 @property (nonatomic) OTPTraverseMode mode;
 @property (strong, nonatomic) NSString *route;
 @property (strong, nonatomic) NSNumber *interlineWithPreviousLeg;
+@property (readonly, nonatomic) BOOL isInterlinedWithPreviousLeg;
 @property (strong, nonatomic) NSString *tripShortName;
 @property (strong, nonatomic) NSString *headsign;
 @property (strong, nonatomic) NSString *tripID;

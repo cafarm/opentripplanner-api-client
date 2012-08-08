@@ -89,6 +89,14 @@
     STAssertNoThrow([mappingTest verify], nil);
 }
 
+- (void)testMappingOfIsInterlinedWithPreviousLeg
+{
+    OTPLeg *leg = [[OTPLeg alloc] init];
+    RKMappingTest *mappingTest = [RKMappingTest testForMapping:[self mapping] sourceObject:[self walkData] destinationObject:leg];
+    [mappingTest performMapping];
+    STAssertTrue(leg.isInterlinedWithPreviousLeg == NO, nil);
+}
+
 - (void)testMappingOfTripShortName
 {
     RKMappingTest *mappingTest = [self transitMappingTest];

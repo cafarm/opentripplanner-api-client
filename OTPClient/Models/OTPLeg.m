@@ -17,6 +17,7 @@
 @synthesize mode;
 @synthesize route;
 @synthesize interlineWithPreviousLeg;
+@synthesize isInterlinedWithPreviousLeg;
 @synthesize tripShortName;
 @synthesize headsign;
 @synthesize tripID;
@@ -31,6 +32,11 @@
 @synthesize duration;
 
 @synthesize itinerary;
+
+- (BOOL)isInterlinedWithPreviousLeg
+{
+    return [interlineWithPreviousLeg boolValue];
+}
 
 // Add leg reference to from
 - (BOOL)validateFrom:(id *)ioValue error:(NSError **)outError
