@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
 
 @class OTPAgencyAndID;
 @class OTPLeg;
@@ -22,6 +24,10 @@
 @property (strong, nonatomic) NSDate *arrival;
 @property (strong, nonatomic) NSNumber *depatureAsTimeInterval;
 @property (strong, nonatomic) NSDate *departure;
+
+// Convenience
+@property (readonly, nonatomic) CLLocationCoordinate2D coordinate;
+@property (readonly, nonatomic) MKMapPoint mapPoint;
 
 @property (weak, nonatomic) OTPLeg *leg;
 

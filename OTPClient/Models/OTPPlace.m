@@ -22,6 +22,16 @@
 
 @synthesize leg;
 
+- (CLLocationCoordinate2D)coordinate
+{
+    return CLLocationCoordinate2DMake([self.latitude doubleValue], [self.longitude doubleValue]);
+}
+
+- (MKMapPoint)mapPoint
+{
+    return MKMapPointForCoordinate(self.coordinate);
+}
+
 // Add parent place reference to stopID
 - (BOOL)validateStopID:(id *)ioValue error:(NSError **)outError
 {
