@@ -16,8 +16,6 @@
 @property (strong, nonatomic) NSString *points;
 @property (strong, nonatomic) NSNumber *length;
 
-@property (readonly, nonatomic) MKPolyline *polyline;
-
 @property (weak, nonatomic) OTPLeg *leg;
 
 @end

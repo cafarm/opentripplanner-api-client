@@ -26,6 +26,22 @@
 
 @synthesize tripPlan;
 
+@synthesize boundingMapRect = _boundingMapRect;
+
+- (MKMapRect)boundingMapRect
+{
+    if (MKMapRectIsNull(_boundingMapRect)) {
+        for (OTPLeg *leg in self.legs) {            
+            if (MKMapRectIsNull(_boundingMapRect)) {
+                _boundingMapRect = [leg boundingMapRect];
+            } else {
+                _boundingMapRect = MKMapRectUnion(_boundingMapRect, [leg boundingMapRect]);
+            }
+        }
+    }
+    return _boundingMapRect;
+}
+
 // Add parent itinerary reference to legs
 - (BOOL)validateLegs:(id *)ioValue error:(NSError **)outError
 {

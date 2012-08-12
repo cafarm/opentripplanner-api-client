@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MapKit/MapKit.h>
 
 @class OTPFare;
 @class OTPLeg;
@@ -28,5 +29,7 @@
 @property (strong, nonatomic) NSArray *legs;
 
 @property (weak, nonatomic) OTPTripPlan *tripPlan;
+
+@property (readonly, nonatomic) MKMapRect boundingMapRect;
 
 @end

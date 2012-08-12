@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MapKit/MapKit.h>
 
 @class OTPPlace;
 @class OTPEncodedPolyline;
@@ -42,5 +43,8 @@ typedef enum {
 @property (strong, nonatomic) NSNumber *duration;
 
 @property (weak, nonatomic) OTPItinerary *itinerary;
+
+@property (readonly, nonatomic) MKPolyline *polyline;
+@property (readonly, nonatomic) MKMapRect boundingMapRect;
 
 @end
