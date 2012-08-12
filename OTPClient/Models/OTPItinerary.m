@@ -28,6 +28,15 @@
 
 @synthesize boundingMapRect = _boundingMapRect;
 
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        _boundingMapRect = MKMapRectNull;
+    }
+    return self;
+}
+
 - (MKMapRect)boundingMapRect
 {
     if (MKMapRectIsNull(_boundingMapRect)) {
