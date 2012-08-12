@@ -61,7 +61,7 @@
     STAssertNoThrow([mappingTest verify], nil);
 }
 
-- (void)testPolylineValue
+- (void)testCreationOfPolyline
 {
     // TODO: Move to fixture file
     
@@ -231,7 +231,7 @@
         {47.60875, -122.33690000000001}};
     
     MKPolyline *expectedPolyline = [MKPolyline polylineWithCoordinates:coordinates count:154];
-    MKPolyline *actualPolyline = legGeometry.polylineValue;
+    MKPolyline *actualPolyline = legGeometry.polyline;
     
     STAssertTrue(actualPolyline.pointCount == expectedPolyline.pointCount, nil);
     

@@ -17,6 +17,16 @@
 @synthesize points = _points;
 @synthesize length = _length;
 
+@synthesize polyline = _polyline;
+
+- (MKPolyline *)polyline
+{
+    if (_polyline == nil) {
+        _polyline = [self polylineValue];
+    }
+    return _polyline;
+}
+
 - (MKPolyline *)polylineValue
 {
     const char *bytes = [self.points UTF8String];
