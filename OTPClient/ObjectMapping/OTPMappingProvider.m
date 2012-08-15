@@ -27,7 +27,6 @@
     if (self) {
         [self setObjectMapping:[self responseObjectMapping] forResourcePathPattern:@"/ws/plan"];
     }
-    
     return self;
 }
 

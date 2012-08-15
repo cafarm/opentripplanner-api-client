@@ -26,9 +26,11 @@
 
 @end
 
+
 @implementation OTPObjectManager
 
 @synthesize baseURL = _baseURL;
+
 @synthesize rkObjectManager = _rkObjectManager;
 
 - (id)initWithBaseURL:(NSURL *)baseURL

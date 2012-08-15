@@ -49,7 +49,7 @@
     
     STAssertEquals(YES, responseLoader.wasSuccessful, nil);
     OTPResponse *response = [responseLoader.objects objectAtIndex:0];
-    STAssertNotNil(response, @"Expected issue not to be nil");
+    STAssertNotNil(response, @"Expected response not to be nil");
     STAssertEqualObjects(response.tripPlan.date, [NSDate dateWithTimeIntervalSince1970:1343086320], nil);
 }
 

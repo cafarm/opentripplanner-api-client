@@ -300,7 +300,7 @@
 		1F2F405A15BCE06600121A2F /* OTPClientTests */ = {
 			isa = PBXGroup;
 			children = (
-				1F9357C615C2156F0045D6DF /* Object Mapping */,
+				1F9357C615C2156F0045D6DF /* ObjectMapping */,
 				1F2F40A715BCE75100121A2F /* Models */,
 				1F2F40AB15BCE8B800121A2F /* Fixtures */,
 				1F2F405B15BCE06600121A2F /* SupportingFiles */,
@@ -406,13 +406,13 @@
 			name = ObjectMapping;
 			sourceTree = "<group>";
 		};
-		1F9357C615C2156F0045D6DF /* Object Mapping */ = {
+		1F9357C615C2156F0045D6DF /* ObjectMapping */ = {
 			isa = PBXGroup;
 			children = (
 				1FF7F34A15BFD93E00694F29 /* OTPObjectManagerTest.m */,
 				1F0128BE15BF74410063ECDC /* OTPMappingProviderTest.m */,
 			);
-			name = "Object Mapping";
+			name = ObjectMapping;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
