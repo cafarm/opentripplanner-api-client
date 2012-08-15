@@ -55,11 +55,11 @@
 - (void)loadTripPlanFrom:(CLLocationCoordinate2D)from
                       to:(CLLocationCoordinate2D)to
                     date:(NSDate *)date
-          numItineraries:(int)numItineraries
+          numItineraries:(NSInteger)numItineraries
           shouldArriveBy:(BOOL)shouldArriveBy
    requiresAccessibility:(BOOL)requiresAccessibility
-         maxWalkDistance:(int)maxWalkDistance
-         transferPenalty:(int)transferPenalty
+         maxWalkDistance:(NSInteger)maxWalkDistance
+         transferPenalty:(NSInteger)transferPenalty
        completionHandler:(OTPTripPlanCompletionHandler)completionHandler
 {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
