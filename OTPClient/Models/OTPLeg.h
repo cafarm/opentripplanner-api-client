@@ -14,16 +14,16 @@
 @class OTPItinerary;
 
 typedef enum {
-    OTPWalk,
-    OTPBus,
-    OTPTram,
-    OTPRail,
-    OTPFerry
-} OTPTraverseMode;
+    OTPLegTraverseModeWalk,
+    OTPLegTraverseModeBus,
+    OTPLegTraverseModeTram,
+    OTPLegTraverseModeRail,
+    OTPLegTraverseModeFerry
+} OTPLegTraverseMode;
 
 @interface OTPLeg : NSObject
 
-@property (nonatomic) OTPTraverseMode mode;
+@property (nonatomic) OTPLegTraverseMode mode;
 @property (strong, nonatomic) NSString *route;
 @property (strong, nonatomic) NSNumber *interlineWithPreviousLeg;
 @property (readonly, nonatomic) BOOL isInterlinedWithPreviousLeg;

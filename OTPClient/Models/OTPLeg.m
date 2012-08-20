@@ -145,15 +145,15 @@
     NSString *stringValue = (NSString *)*ioValue;
     
     if ([stringValue isEqualToString:@"WALK"]) {
-        *ioValue = [NSNumber numberWithInt:OTPWalk];
+        *ioValue = [NSNumber numberWithInt:OTPLegTraverseModeWalk];
     } else if ([stringValue isEqualToString:@"BUS"]) {
-        *ioValue = [NSNumber numberWithInt:OTPBus];
+        *ioValue = [NSNumber numberWithInt:OTPLegTraverseModeBus];
     } else if ([stringValue isEqualToString:@"TRAM"]) {
-        *ioValue = [NSNumber numberWithInt:OTPTram];
+        *ioValue = [NSNumber numberWithInt:OTPLegTraverseModeTram];
     } else if ([stringValue isEqualToString:@"RAIL"]) {
-        *ioValue = [NSNumber numberWithInt:OTPRail];
+        *ioValue = [NSNumber numberWithInt:OTPLegTraverseModeRail];
     } else if ([stringValue isEqualToString:@"FERRY"]) {
-        *ioValue = [NSNumber numberWithInt:OTPFerry];
+        *ioValue = [NSNumber numberWithInt:OTPLegTraverseModeFerry];
     } else {
         return NO;
     }

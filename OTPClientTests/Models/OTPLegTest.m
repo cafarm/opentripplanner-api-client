@@ -64,7 +64,7 @@
     OTPLeg *leg = [[OTPLeg alloc] init];
     RKMappingTest *mappingTest = [RKMappingTest testForMapping:[self mapping] sourceObject:[self walkData] destinationObject:leg];
     [mappingTest performMapping];
-    STAssertTrue(leg.mode == OTPWalk, nil);
+    STAssertTrue(leg.mode == OTPLegTraverseModeWalk, nil);
 }
 
 - (void)testMappingOfBusMode
@@ -72,7 +72,7 @@
     OTPLeg *leg = [[OTPLeg alloc] init];
     RKMappingTest *mappingTest = [RKMappingTest testForMapping:[self mapping] sourceObject:[self transitData] destinationObject:leg];
     [mappingTest performMapping];
-    STAssertTrue(leg.mode == OTPBus, nil);
+    STAssertTrue(leg.mode == OTPLegTraverseModeBus, nil);
 }
 
 - (void)testMappingOfRoute
