@@ -60,17 +60,17 @@
     to.longitude = -122.302415;
     objectManager.to = to;
     
-    __block OTPTripPlan *loadedTripPlan;
-    __block NSError *loadedError;
+    __block OTPTripPlan *fetchedTripPlan;
+    __block NSError *fetchError;
     [objectManager fetchTripPlanWithCompletionHandler:^(OTPTripPlan *tripPlan, NSError *error) {
-        loadedTripPlan = tripPlan;
-        loadedError = error;
+        fetchedTripPlan = tripPlan;
+        fetchError = error;
         done = YES;
     }];
         
     STAssertTrue([self waitForCompletion:90.0], @"Failed to get any results in time");
-    STAssertNil(loadedError, nil);
-    STAssertNotNil(loadedTripPlan.itineraries, nil);
+    STAssertNil(fetchError, nil);
+    STAssertNotNil(fetchedTripPlan.itineraries, nil);
 }
 
 // TODO: error testing
