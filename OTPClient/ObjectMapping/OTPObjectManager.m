@@ -31,6 +31,15 @@
 
 @synthesize baseURL = _baseURL;
 
+@synthesize from = _from;
+@synthesize to = _to;
+@synthesize date = _date;
+@synthesize numItineraries = _numItineraries;
+@synthesize shouldArriveBy = _shouldArriveBy;
+@synthesize requiresAccessibility = _requiresAccessibility;
+@synthesize maxWalkDistance = _maxWalkDistance;
+@synthesize transferPenalty = _transferPenalty;
+
 @synthesize rkObjectManager = _rkObjectManager;
 
 - (id)initWithBaseURL:(NSURL *)baseURL
@@ -38,6 +47,13 @@
     self = [super init];
     if (self) {
         _baseURL = baseURL;
+        
+        _date = [NSDate date];
+        _numItineraries = 3;
+        _shouldArriveBy = NO;
+        _requiresAccessibility = NO;
+        _maxWalkDistance = 800;
+        _transferPenalty = 0;
     }
     return self;
 }
@@ -52,15 +68,7 @@
     return _rkObjectManager;
 }
 
-- (void)loadTripPlanFrom:(CLLocationCoordinate2D)from
-                      to:(CLLocationCoordinate2D)to
-                    date:(NSDate *)date
-          numItineraries:(NSInteger)numItineraries
-          shouldArriveBy:(BOOL)shouldArriveBy
-   requiresAccessibility:(BOOL)requiresAccessibility
-         maxWalkDistance:(NSInteger)maxWalkDistance
-         transferPenalty:(NSInteger)transferPenalty
-       completionHandler:(OTPTripPlanCompletionHandler)completionHandler
+- (void)fetchTripPlanWithCompletionHandler:(OTPTripPlanCompletionHandler)completionHandler
 {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"MM/dd/yyyy"];
@@ -69,14 +77,14 @@
     [timeFormatter setDateFormat:@"hh:mm a"];
     
     NSDictionary *queryParameters = [NSDictionary dictionaryWithKeysAndObjects:
-                                     @"fromPlace", [NSString stringWithFormat:@"%f,%f", from.latitude, from.longitude],
-                                     @"toPlace", [NSString stringWithFormat:@"%f,%f", to.latitude, to.longitude],
-                                     @"date", [dateFormatter stringFromDate:date],
-                                     @"numItineraries", [NSString stringWithFormat:@"%i", numItineraries],
-                                     @"time", [timeFormatter stringFromDate:date],
-                                     @"arriveBy", shouldArriveBy ? @"true" : @"false",
-                                     @"wheelchair", requiresAccessibility ? @"true" : @"false",
-                                     @"transferPenalty", [NSString stringWithFormat:@"%i", transferPenalty],
+                                     @"fromPlace", [NSString stringWithFormat:@"%f,%f", self.from.latitude, self.from.longitude],
+                                     @"toPlace", [NSString stringWithFormat:@"%f,%f", self.to.latitude, self.to.longitude],
+                                     @"date", [dateFormatter stringFromDate:self.date],
+                                     @"numItineraries", [NSString stringWithFormat:@"%i", self.numItineraries],
+                                     @"time", [timeFormatter stringFromDate:self.date],
+                                     @"arriveBy", self.shouldArriveBy ? @"true" : @"false",
+                                     @"wheelchair", self.requiresAccessibility ? @"true" : @"false",
+                                     @"transferPenalty", [NSString stringWithFormat:@"%i", self.transferPenalty],
                                      nil];
     
     NSString *resourcePath = [@"/ws/plan" stringByAppendingQueryParameters:queryParameters];
@@ -106,22 +114,6 @@
             completionHandler(nil, error);
         };
     }];
-}
-
-
-- (void)loadTripPlanFrom:(CLLocationCoordinate2D)from
-                      to:(CLLocationCoordinate2D)to
-       completionHandler:(OTPTripPlanCompletionHandler)completionHandler
-{
-    [self loadTripPlanFrom:from
-                        to:to
-                      date:[NSDate date]
-            numItineraries:1
-            shouldArriveBy:NO
-     requiresAccessibility:NO
-           maxWalkDistance:800
-           transferPenalty:0
-         completionHandler:completionHandler];
 }
 
 @end

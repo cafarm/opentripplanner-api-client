@@ -53,14 +53,16 @@
     CLLocationCoordinate2D from;
     from.latitude = 47.656771;
     from.longitude = -122.301599;
+    objectManager.from = from;
     
     CLLocationCoordinate2D to;
     to.latitude = 47.530123;
     to.longitude = -122.302415;
+    objectManager.to = to;
     
     __block OTPTripPlan *loadedTripPlan;
     __block NSError *loadedError;
-    [objectManager loadTripPlanFrom:from to:to completionHandler:^(OTPTripPlan *tripPlan, NSError *error) {
+    [objectManager fetchTripPlanWithCompletionHandler:^(OTPTripPlan *tripPlan, NSError *error) {
         loadedTripPlan = tripPlan;
         loadedError = error;
         done = YES;

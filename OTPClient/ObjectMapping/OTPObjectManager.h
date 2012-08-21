@@ -20,18 +20,15 @@ typedef void (^OTPTripPlanCompletionHandler)(OTPTripPlan *tripPlan, NSError *err
 
 @property (readonly, nonatomic) NSURL *baseURL;
 
-- (void)loadTripPlanFrom:(CLLocationCoordinate2D)from
-                      to:(CLLocationCoordinate2D)to
-                    date:(NSDate *)date
-          numItineraries:(NSInteger)numItineraries
-          shouldArriveBy:(BOOL)shouldArriveBy
-   requiresAccessibility:(BOOL)requiresAccessibility
-         maxWalkDistance:(NSInteger)maxWalkDistance
-         transferPenalty:(NSInteger)transferPenalty
-       completionHandler:(OTPTripPlanCompletionHandler)completionHandler;
+@property (nonatomic) CLLocationCoordinate2D from;
+@property (nonatomic) CLLocationCoordinate2D to;
+@property (strong, nonatomic) NSDate *date;
+@property (nonatomic) NSUInteger numItineraries;
+@property (nonatomic) BOOL shouldArriveBy;
+@property (nonatomic) BOOL requiresAccessibility;
+@property (nonatomic) NSUInteger maxWalkDistance;
+@property (nonatomic) NSUInteger transferPenalty;
 
-- (void)loadTripPlanFrom:(CLLocationCoordinate2D)from
-                      to:(CLLocationCoordinate2D)to
-       completionHandler:(OTPTripPlanCompletionHandler)completionHandler;
+- (void)fetchTripPlanWithCompletionHandler:(OTPTripPlanCompletionHandler)completionHandler;
 
 @end
