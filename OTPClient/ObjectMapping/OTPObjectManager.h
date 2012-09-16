@@ -12,6 +12,12 @@
 @class OTPPlace;
 @class OTPTripPlan;
 
+typedef enum {
+    OTPObjectManagerOptimizeBestRoute,
+    OTPObjectManagerOptimizeFewerTransfers,
+    OTPObjectManagerOptimizeLessWalking
+} OTPObjectManagerOptimize;
+
 typedef void (^OTPTripPlanCompletionHandler)(OTPTripPlan *tripPlan, NSError *error);
 
 @interface OTPObjectManager : NSObject
@@ -26,8 +32,9 @@ typedef void (^OTPTripPlanCompletionHandler)(OTPTripPlan *tripPlan, NSError *err
 @property (nonatomic) NSUInteger numItineraries;
 @property (nonatomic) BOOL shouldArriveBy;
 @property (nonatomic) BOOL requiresAccessibility;
-@property (nonatomic) NSUInteger maxWalkDistance;
-@property (nonatomic) NSUInteger transferPenalty;
+
+// This is our own implementation of optimize using a mixture of max walking distance and transfer penalty
+@property (nonatomic) OTPObjectManagerOptimize optimize;
 
 - (void)fetchTripPlanWithCompletionHandler:(OTPTripPlanCompletionHandler)completionHandler;
 

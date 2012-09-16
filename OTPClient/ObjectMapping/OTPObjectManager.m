@@ -24,6 +24,10 @@
 
 @property (readonly, nonatomic) RKObjectManager *rkObjectManager;
 
+// Use optimize to setting routing preferences
+@property (nonatomic) NSUInteger maxWalkDistance;
+@property (nonatomic) NSUInteger transferPenalty;
+
 @end
 
 
@@ -37,10 +41,12 @@
 @synthesize numItineraries = _numItineraries;
 @synthesize shouldArriveBy = _shouldArriveBy;
 @synthesize requiresAccessibility = _requiresAccessibility;
-@synthesize maxWalkDistance = _maxWalkDistance;
-@synthesize transferPenalty = _transferPenalty;
+@synthesize optimize = _optimize;
 
 @synthesize rkObjectManager = _rkObjectManager;
+
+@synthesize transferPenalty = _transferPenalty;
+@synthesize maxWalkDistance = _maxWalkDistance;
 
 - (id)initWithBaseURL:(NSURL *)baseURL
 {
@@ -52,13 +58,14 @@
         _numItineraries = 3;
         _shouldArriveBy = NO;
         _requiresAccessibility = NO;
-        _maxWalkDistance = 800;
+        _optimize = OTPObjectManagerOptimizeBestRoute;
         _transferPenalty = 0;
+        _maxWalkDistance = 800;
     }
     return self;
 }
 
--(RKObjectManager *)rkObjectManager
+- (RKObjectManager *)rkObjectManager
 {
     if (_rkObjectManager == nil) {
         _rkObjectManager = [RKObjectManager managerWithBaseURL:self.baseURL];
@@ -66,6 +73,25 @@
         [_rkObjectManager.client setValue:@"application/json" forHTTPHeaderField:@"Accept"];
     }
     return _rkObjectManager;
+}
+
+- (void)setOptimize:(OTPObjectManagerOptimize)optimize
+{
+    switch (optimize) {
+        case OTPObjectManagerOptimizeBestRoute:
+            self.maxWalkDistance = 800;
+            self.transferPenalty = 0;
+            break;
+        case OTPObjectManagerOptimizeFewerTransfers:
+            self.maxWalkDistance = 800;
+            self.transferPenalty = 600;
+            break;
+        case OTPObjectManagerOptimizeLessWalking:
+            self.maxWalkDistance = 400;
+            self.transferPenalty = 300;
+            break;
+    }
+    _optimize = optimize;
 }
 
 - (void)fetchTripPlanWithCompletionHandler:(OTPTripPlanCompletionHandler)completionHandler
@@ -85,6 +111,7 @@
                                      @"arriveBy", self.shouldArriveBy ? @"true" : @"false",
                                      @"wheelchair", self.requiresAccessibility ? @"true" : @"false",
                                      @"transferPenalty", [NSString stringWithFormat:@"%i", self.transferPenalty],
+                                     @"maxWalkDistance", [NSString stringWithFormat:@"%i", self.maxWalkDistance],
                                      nil];
     
     NSString *resourcePath = [@"/ws/plan" stringByAppendingQueryParameters:queryParameters];
